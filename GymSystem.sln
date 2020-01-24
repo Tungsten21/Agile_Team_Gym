@@ -26,6 +26,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GymFrontOffice", "GymFrontO
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymClasses", "GymClasses\GymClasses.csproj", "{C9783756-8457-49E4-ABA4-9B67ADE13BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTesting", "GymTesting\GymTesting.csproj", "{2F745A8F-F1C0-4573-8D38-0A02F7F62A58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{0854E064-C0F8-4325-902D-158023AC3020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0854E064-C0F8-4325-902D-158023AC3020}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{0854E064-C0F8-4325-902D-158023AC3020}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C9783756-8457-49E4-ABA4-9B67ADE13BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9783756-8457-49E4-ABA4-9B67ADE13BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9783756-8457-49E4-ABA4-9B67ADE13BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9783756-8457-49E4-ABA4-9B67ADE13BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F745A8F-F1C0-4573-8D38-0A02F7F62A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F745A8F-F1C0-4573-8D38-0A02F7F62A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F745A8F-F1C0-4573-8D38-0A02F7F62A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F745A8F-F1C0-4573-8D38-0A02F7F62A58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
