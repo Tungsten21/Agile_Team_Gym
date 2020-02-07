@@ -1,0 +1,8 @@
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\bin\Debug\GymBackOffice.exe.config
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\bin\Debug\GymBackOffice.exe
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\bin\Debug\GymBackOffice.pdb
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\obj\Debug\GymBackOffice.csprojAssemblyReference.cache
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\obj\Debug\GymBackOffice.Properties.Resources.resources
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\obj\Debug\GymBackOffice.csproj.GenerateResource.cache
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\obj\Debug\GymBackOffice.exe
+C:\Users\rosso\Desktop\TodaysWork\GymBackOffice\obj\Debug\GymBackOffice.pdb
