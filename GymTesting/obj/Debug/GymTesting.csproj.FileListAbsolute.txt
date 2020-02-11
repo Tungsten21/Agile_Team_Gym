@@ -13,3 +13,19 @@ C:\Users\rosso\Desktop\TodaysWork\GymTesting\bin\Debug\Microsoft.VisualStudio.Te
 C:\Users\rosso\Desktop\TodaysWork\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
 C:\Users\rosso\Desktop\TodaysWork\GymTesting\obj\Debug\GymTesting.dll
 C:\Users\rosso\Desktop\TodaysWork\GymTesting\obj\Debug\GymTesting.pdb
+H:\Agile Team Development\Today's Work\GymTesting\obj\Debug\GymTesting.csprojAssemblyReference.cache
+H:\Agile Team Development\Today's Work\GymTesting\obj\Debug\GymTesting.csproj.CoreCompileInputs.cache
+H:\Agile Team Development\Today's Work\GymTesting\obj\Debug\GymTesting.dll
+H:\Agile Team Development\Today's Work\GymTesting\obj\Debug\GymTesting.pdb
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\GymTesting.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\GymTesting.pdb
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\GymClasses.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\GymClasses.pdb
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+H:\Agile Team Development\Today's Work\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+H:\Agile Team Development\Today's Work\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
