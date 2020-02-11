@@ -1,0 +1,5 @@
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.pdb

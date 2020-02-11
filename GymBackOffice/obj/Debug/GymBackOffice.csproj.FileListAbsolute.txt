@@ -1,0 +1,8 @@
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\bin\Debug\GymBackOffice.exe.config
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\bin\Debug\GymBackOffice.exe
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\bin\Debug\GymBackOffice.pdb
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\obj\Debug\GymBackOffice.csprojAssemblyReference.cache
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\obj\Debug\GymBackOffice.Properties.Resources.resources
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\obj\Debug\GymBackOffice.csproj.GenerateResource.cache
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\obj\Debug\GymBackOffice.exe
+C:\Users\rosso\Documents\GitHub\Agile_Team_Gym\GymBackOffice\obj\Debug\GymBackOffice.pdb
