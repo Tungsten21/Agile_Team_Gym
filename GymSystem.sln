@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GymFrontOffice", "GymFrontOffice\", "{0854E064-C0F8-4325-902D-158023AC3020}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{c9783756-8457-49e4-aba4-9b67ade13be7}|GymClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50536"
 		Debug.AspNetCompiler.PhysicalPath = "GymFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50536\"
@@ -23,6 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GymFrontOffice", "GymFrontO
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50536"
+		SlnRelativePath = "GymFrontOffice\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
