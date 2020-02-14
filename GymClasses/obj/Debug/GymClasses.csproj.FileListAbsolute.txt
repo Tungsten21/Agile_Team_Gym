@@ -9,3 +9,8 @@ H:\Agile Team Development\Today's Work\GymClasses\obj\Debug\GymClasses.csprojAss
 H:\Agile Team Development\Today's Work\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
 H:\Agile Team Development\Today's Work\GymClasses\obj\Debug\GymClasses.dll
 H:\Agile Team Development\Today's Work\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\tonight\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\tonight\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.pdb
