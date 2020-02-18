@@ -44,3 +44,19 @@ C:\Users\rosso\Desktop\tonight\GymTesting\bin\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\tonight\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\rosso\Desktop\tonight\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\rosso\Desktop\tonight\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+H:\Documents\New folder\GymTesting\bin\Debug\GymTesting.dll
+H:\Documents\New folder\GymTesting\bin\Debug\GymTesting.pdb
+H:\Documents\New folder\GymTesting\bin\Debug\GymClasses.dll
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+H:\Documents\New folder\GymTesting\bin\Debug\GymClasses.pdb
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+H:\Documents\New folder\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+H:\Documents\New folder\GymTesting\obj\Debug\GymTesting.csprojAssemblyReference.cache
+H:\Documents\New folder\GymTesting\obj\Debug\GymTesting.csproj.CoreCompileInputs.cache
+H:\Documents\New folder\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
+H:\Documents\New folder\GymTesting\obj\Debug\GymTesting.dll
+H:\Documents\New folder\GymTesting\obj\Debug\GymTesting.pdb
