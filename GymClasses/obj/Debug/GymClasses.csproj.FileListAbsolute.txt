@@ -14,3 +14,9 @@ C:\Users\rosso\Desktop\tonight\GymClasses\bin\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
 C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\tonight\GymClasses\obj\Debug\GymClasses.pdb
+H:\Documents\New folder\GymClasses\bin\Debug\GymClasses.dll
+H:\Documents\New folder\GymClasses\bin\Debug\GymClasses.pdb
+H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.dll
+H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.pdb
