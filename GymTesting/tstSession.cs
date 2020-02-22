@@ -1,4 +1,5 @@
 ﻿using System;
+using GymClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GymTesting
@@ -11,6 +12,7 @@ namespace GymTesting
         {
             clsSession ASession = new clsSession();
             Assert.IsNotNull(ASession);
+        
         }
     }
 }

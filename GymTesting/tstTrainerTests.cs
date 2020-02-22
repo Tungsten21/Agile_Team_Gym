@@ -75,5 +75,117 @@ namespace GymTesting
             ATrainer.EmailAddress = email;
             Assert.AreEqual(ATrainer.EmailAddress, email);
         }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //boolean variable to store the result of the validaiton
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 TestTrainerID = 4;
+            //invoke the method
+            Found = ATrainer.Find(TestTrainerID);
+        }
+        [TestMethod]
+        public void TestTrainerIDFound()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestTrainerID = 2;
+            //invoke the method
+            Found = ATrainer.Find(TestTrainerID);
+            //check the trainer ID
+            if (ATrainer.TrainerID != 2)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestDateOfBirthFound()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestTrainerID = 2;
+            //invoke the method
+            Found = ATrainer.Find(TestTrainerID);
+            //check the property
+            if (ATrainer.DateOfBirth != Convert.ToDateTime("20/05/1990"))
+            {
+                OK = false;
+            }
+            //test ot see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestGenderFound()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestTrainerID = 2;
+            Found = ATrainer.Find(TestTrainerID);
+            if (ATrainer.Gender != "Male")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestEmailAddressFound()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestTrainerID = 2;
+            Found = ATrainer.Find(TestTrainerID);
+            if(ATrainer.EmailAddress != "paulkarth22@gmail.com")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestRetrainedFound()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestTrainerID = 2;
+            Found = ATrainer.Find(TestTrainerID);
+            if (ATrainer.Retrained != false)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestFullNameFound()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestTrainerID = 2;
+            Found = ATrainer.Find(TestTrainerID);
+            if (ATrainer.FullName != "Paul Karth")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
     }
 }
