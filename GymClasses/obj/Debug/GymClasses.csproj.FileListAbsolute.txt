@@ -20,3 +20,8 @@ H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.
 H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
 H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.dll
 H:\Documents\New folder\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\rossGit\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\rossGit\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.pdb
