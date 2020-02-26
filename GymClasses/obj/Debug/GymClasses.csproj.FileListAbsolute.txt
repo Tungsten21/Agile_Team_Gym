@@ -25,3 +25,9 @@ C:\Users\rosso\Desktop\rossGit\GymClasses\bin\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
 C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGit\GymClasses\obj\Debug\GymClasses.pdb
+H:\Agile Team Development\Todays1\GymClasses\bin\Debug\GymClasses.dll
+H:\Agile Team Development\Todays1\GymClasses\bin\Debug\GymClasses.pdb
+H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.dll
+H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.pdb
