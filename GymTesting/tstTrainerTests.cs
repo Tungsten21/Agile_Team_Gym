@@ -83,7 +83,7 @@ namespace GymTesting
             //boolean variable to store the result of the validaiton
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 TestTrainerID = 4;
+            int TestTrainerID = 2;
             //invoke the method
             Found = ATrainer.Find(TestTrainerID);
         }
@@ -122,7 +122,7 @@ namespace GymTesting
             //invoke the method
             Found = ATrainer.Find(TestTrainerID);
             //check the property
-            if (ATrainer.DateOfBirth != Convert.ToDateTime("20/05/1990"))
+            if (ATrainer.DateOfBirth != Convert.ToDateTime("19/05/1992"))
             {
                 OK = false;
             }
@@ -151,7 +151,7 @@ namespace GymTesting
             Boolean OK = true;
             Int32 TestTrainerID = 2;
             Found = ATrainer.Find(TestTrainerID);
-            if(ATrainer.EmailAddress != "paulkarth22@gmail.com")
+            if(ATrainer.EmailAddress != "tonygunn27@hotmail.co.uk")
             {
                 OK = false;
             }
@@ -166,7 +166,7 @@ namespace GymTesting
             Boolean OK = true;
             Int32 TestTrainerID = 2;
             Found = ATrainer.Find(TestTrainerID);
-            if (ATrainer.Retrained != false)
+            if (ATrainer.Retrained != true)
             {
                 OK = false;
             }
@@ -180,7 +180,7 @@ namespace GymTesting
             Boolean OK = true;
             Int32 TestTrainerID = 2;
             Found = ATrainer.Find(TestTrainerID);
-            if (ATrainer.FullName != "Paul Karth")
+            if (ATrainer.FullName != "Tony Gunn")
             {
                 OK = false;
             }
