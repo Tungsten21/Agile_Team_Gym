@@ -83,12 +83,12 @@ namespace GymClasses
             }
         }
 
-        public bool Find(int testTrainerID)
+        public bool Find(int TrainerID)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the TrainerID to search for
-            DB.AddParameter("@Trainer", TrainerID);
+            DB.AddParameter("@TrainerID", TrainerID);
             //execute the stored procedure
             DB.Execute("sproc_tblTrainer_FilterByTrainerID");
             //if one record is found (there should be either one or zero!)

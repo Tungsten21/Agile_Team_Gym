@@ -8,34 +8,34 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Trainer ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="trainerID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
+        <div id="lblTrainerID">
+            TrainerID
+            <asp:TextBox ID="txtTrainerID" runat="server" Height="16px"></asp:TextBox>
+&nbsp;<asp:Button ID="btnFind" runat="server" Height="20px" OnClick="btnFind_Click" Text="Find" Width="78px" />
             <br />
-            Full Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="fullName" runat="server" Height="16px" Width="150px"></asp:TextBox>
-&nbsp;
+        <div id="lblFullName">
+            Fullname&nbsp;
+            <asp:TextBox ID="txtFullname" runat="server" Height="16px"></asp:TextBox>
             <br />
-            Date Of Birth:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Calendar ID="Calendar1" runat="server" Height="173px" style="margin-top: 0px" Width="299px"></asp:Calendar>
-            <br />
-            Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="gender" runat="server" Height="16px" Width="150px"></asp:TextBox>
-            <br />
-            Email Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="email" runat="server" Height="16px" Width="150px"></asp:TextBox>
-            <br />
-            <br />
-            <asp:CheckBox ID="retrained" runat="server" Text="Retrained?" TextAlign="Left" />
+            <asp:Label ID="Label1" runat="server" Text="Gender"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtGender" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="lblDateOfBirth" runat="server" Text="D.O.B"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtDateOfBirth" runat="server"></asp:TextBox>
         </div>
-        <p>
-            <asp:Button ID="ok" runat="server" Height="70px" OnClick="Button1_Click" Text="OK" Width="113px" />
-            <asp:Button ID="cancel" runat="server" Height="70px" OnClick="Button1_Click" Text="Cancel" Width="113px" />
-        </p>
+            <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+            <br />
+            <asp:CheckBox ID="chkRetrained" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1" Text="Retrained in the last 3 years?" TextAlign="Left" />
+            <br />
+            <br />
+            <asp:Button ID="btnView" runat="server" OnClick="btnView_Click" Text="View" Width="103px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="103px" />
+        </div>
     </form>
 </body>
 </html>
