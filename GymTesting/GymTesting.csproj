@@ -53,7 +53,6 @@
     <Compile Include="tstMember.cs" />
     <Compile Include="tstSession.cs" />
     <Compile Include="tstTrainerTests.cs" />
-    <Compile Include="tstMember.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
