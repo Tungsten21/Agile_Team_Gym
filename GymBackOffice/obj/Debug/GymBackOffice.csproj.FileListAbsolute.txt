@@ -32,3 +32,12 @@ H:\Agile Team Development\Todays1\GymBackOffice\obj\Debug\GymBackOffice.csproj.G
 H:\Agile Team Development\Todays1\GymBackOffice\obj\Debug\GymBackOffice.csproj.CoreCompileInputs.cache
 H:\Agile Team Development\Todays1\GymBackOffice\obj\Debug\GymBackOffice.exe
 H:\Agile Team Development\Todays1\GymBackOffice\obj\Debug\GymBackOffice.pdb
+H:\Documents\Agile\GymBackOffice\bin\Debug\GymBackOffice.exe.config
+H:\Documents\Agile\GymBackOffice\bin\Debug\GymBackOffice.exe
+H:\Documents\Agile\GymBackOffice\bin\Debug\GymBackOffice.pdb
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.csprojAssemblyReference.cache
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.Properties.Resources.resources
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.csproj.GenerateResource.cache
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.csproj.CoreCompileInputs.cache
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.exe
+H:\Documents\Agile\GymBackOffice\obj\Debug\GymBackOffice.pdb

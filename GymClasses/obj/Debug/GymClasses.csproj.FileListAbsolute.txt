@@ -37,3 +37,9 @@ H:\Documents\New folder (2)\GymClasses\obj\Debug\GymClasses.csprojAssemblyRefere
 H:\Documents\New folder (2)\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
 H:\Documents\New folder (2)\GymClasses\obj\Debug\GymClasses.dll
 H:\Documents\New folder (2)\GymClasses\obj\Debug\GymClasses.pdb
+H:\Documents\Agile\GymClasses\bin\Debug\GymClasses.dll
+H:\Documents\Agile\GymClasses\bin\Debug\GymClasses.pdb
+H:\Documents\Agile\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+H:\Documents\Agile\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+H:\Documents\Agile\GymClasses\obj\Debug\GymClasses.dll
+H:\Documents\Agile\GymClasses\obj\Debug\GymClasses.pdb

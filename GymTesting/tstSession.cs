@@ -36,9 +36,9 @@ namespace GymTesting
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
-            ASession.datetime = TestData;
+            ASession.DateTime = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(ASession.datetime, TestData);
+            Assert.AreEqual(ASession.DateTime, TestData);
         }
         [TestMethod]
         public void SessionIDPropertyOK()
@@ -83,6 +83,8 @@ namespace GymTesting
             ASession.Cost = cost;
             Assert.AreEqual(ASession.Cost, cost);
         }
+
+        [TestMethod]
         public void FindMethodOK()
         {
             //create an instance of the class we want to create
@@ -93,8 +95,145 @@ namespace GymTesting
             Int32 TestSessionID = 4;
             //invoke the method
             Found = ASession.Find(TestSessionID);
+            //test to see th the result is correct
+            Assert.IsTrue(Found);
 
         }
 
+        [TestMethod]
+        public void TestSessionIDFound()
+        {
+            //create an instance of the class we want to create
+            clsSession ASession = new clsSession();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestSessionID = 3;
+            //invoke the method
+            Found = ASession.Find(ASession.SessionID);
+            //check the Session ID
+            if (ASession.SessionID != 3)
+            {
+                OK = false;
+            }
+
+        }
+
+        [TestMethod]
+        public void TestTrainerIDFound()
+        {
+            //create an instance of the class we want to create
+            clsSession ASession = new clsSession();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestTrainerID = 5;
+            //invoke the method
+            Found = ASession.Find(ASession.SessionID);
+            //check the Session ID
+            if (ASession.TrainerID != 5)
+            {
+                OK = false;
+            }
+
+        }
+        [TestMethod]
+        public void TestBranchIDFound()
+        {
+            //create an instance of the class we want to create
+            clsSession ASession = new clsSession();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestBranchID = 4;
+            //invoke the method
+            Found = ASession.Find(ASession.SessionID);
+            //check the Session ID
+            if (ASession.BranchID != 4)
+            {
+                OK = false;
+            }
+
+        }
+        [TestMethod]
+        public void TestTypeFound()
+        {
+            clsSession ASession = new clsSession();
+            Boolean Found = false;
+            Boolean OK = true;
+            String TestType = "Swimming";
+            Found = ASession.Find(ASession.SessionID);
+            if (ASession.Type != "Swimming")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCostFound()
+        {
+        //create an instance of the class we want to create
+                 clsSession ASession = new clsSession();
+        //boolean variable to store the result of the search
+               Boolean Found = false;
+        //boolean variable to record if data is OK(assume it is)
+              Boolean OK = true;
+        //create some test data to use with the method
+             Double TestCost = 2.50;
+        //invoke the method
+              Found = ASession.Find(ASession.SessionID);
+        //check the Session ID
+             if (ASession.Cost != Convert.ToDouble(2.50))
+             {
+                 OK = false;
+             }
     }
+
+[TestMethod]
+        public void TestDateTimeFound()
+        {
+            //create an instance of the class we want to create
+            clsSession ASession = new clsSession();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestSessionID = 21;
+            //invoke the method
+            Found = ASession.Find(ASession.SessionID);
+            //check the property
+            if (ASession.DateTime != Convert.ToDateTime("20/05/1990"))
+            {
+                OK = false;
+            }
+            //test ot see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEquipmenRequiedFound()
+        {
+            clsSession ASession = new clsSession();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestTrainerID = 2;
+            Found = ASession.Find(ASession.SessionID);
+            if (ASession.EquipmentRequired != false)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+
+    }
+
 }
