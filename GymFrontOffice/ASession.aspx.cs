@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using GymClasses;
 
 public partial class ASession : System.Web.UI.Page
 {
@@ -24,12 +25,17 @@ public partial class ASession : System.Web.UI.Page
         //capture all the data
         int sessionid = int.Parse(sessionID.Text);
         ASession.SessionID = sessionid;
-       // int trainerid = int.Parse(trainerID.Text);
-       // ASession.TrainerID = trainerid;
-       // int branchid = int.Parse(branchID.Text);
-     //   ASession.BranchID = branchid;
-        //ASession.Type = type.Text;
-      //  ASession.Cost = cost.Double;
+
+        int trainerid = int.Parse(TrainerID.Text);
+        ASession.TrainerID = trainerid;
+
+        int branchid = int.Parse(BranchID.Text);
+        ASession.BranchID = branchid;
+
+       ASession.Type = Type.Text;
+
+        ASession.Cost = Double.Parse(Cost.Text);
+
         ASession.EquipmentRequired = EquipmentRequired.Checked;
 
         //store the address in the session object

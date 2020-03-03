@@ -37,6 +37,6 @@ public partial class ATrainer : System.Web.UI.Page
         Session["ATrainer"] = ATrainer;
         //redirect to the viewer page
         Response.Redirect("TrainerViewer.aspx");
-
+        
     }
 }
