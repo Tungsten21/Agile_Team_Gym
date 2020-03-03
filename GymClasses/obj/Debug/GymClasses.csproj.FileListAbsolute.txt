@@ -31,3 +31,8 @@ H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.csprojAssembly
 H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
 H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.dll
 H:\Agile Team Development\Todays1\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\New folder\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\New folder\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\New folder\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\rosso\Desktop\New folder\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\New folder\GymClasses\obj\Debug\GymClasses.pdb

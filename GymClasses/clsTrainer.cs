@@ -111,5 +111,30 @@ namespace GymClasses
                 return false;
             }
         }
+        
+        public string Valid(string fullName, string gender, DateTime dateOfBirth, string email)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //if the fullName is blank
+            if (fullName.Length == 0)
+            {
+                //record the error
+                Error = Error + "Please enter a full name : ";
+            }
+            if (fullName.Length == 1)
+            {
+                Error = "Please enter a valid full name : ";
+            }
+            if (fullName.Length > 40)
+            {
+                Error = "Please enter a full name less then 40 characters long : ";
+            }
+            if(!fullName.Contains(" "))
+            {
+                Error = "Please enter a valid full name using the following format: 'Firstname Lastname"; 
+            }
+            return Error;
+        }
     }
 } 

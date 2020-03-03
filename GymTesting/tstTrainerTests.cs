@@ -4,9 +4,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GymTesting
 {
+    
+
     [TestClass]
     public class tstTrainerTests
     {
+        //good test data
+        //create some test data to pass to the method
+        string fullName = "Robert Smith";
+        string gender = "Male";
+        DateTime dateOfBirth = DateTime.Now.Date;
+        string email = "robsmith662@gmail.com";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -186,6 +195,124 @@ namespace GymTesting
             }
             Assert.IsTrue(OK);
         }
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //string variable to store any error message
+            String Error = "";
+            //invoke the method
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            //test to see that hte result is correct
+            Assert.AreEqual(Error, "");
 
+        }
+        [TestMethod]
+        public void fullNameExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            String fullName = ""; //should fail
+            //invoke the method
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        
+        [TestMethod]
+        public void fullNameMinMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "A";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void fullNameMinBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string fullName = "A A";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+        
+        [TestMethod]
+        public void fullNameMinPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AA A";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+        
+        [TestMethod]
+        public void fullNameMaxMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void fullNameMaxBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        
+        [TestMethod]
+        public void fullNameMaxPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void fullNameMid()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AAAAAAAAAAA AAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void fullNameExtremeMax()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "";
+            fullName = fullName.PadRight(100, 'A') + " ";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void fullNameContainsSpace()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "AAAAAAAAAAAAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
