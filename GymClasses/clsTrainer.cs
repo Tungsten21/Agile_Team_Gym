@@ -112,10 +112,11 @@ namespace GymClasses
             }
         }
         
-        public string Valid(string fullName, string gender, DateTime dateOfBirth, string email)
+        public string Valid(string fullName, string gender, string dateOfBirth, string email)
         {
             //create a string variable to store the error
             String Error = "";
+            DateTime DataTemp;
             //if the fullName is blank
             if (fullName.Length == 0)
             {
@@ -132,8 +133,21 @@ namespace GymClasses
             }
             if(!fullName.Contains(" "))
             {
-                Error = "Please enter a valid full name using the following format: 'Firstname Lastname"; 
+                Error = "Please enter a valid full name using the following format: 'Firstname Lastname' : " ; 
             }
+            try
+            {
+                DataTemp = Convert.ToDateTime(dateOfBirth);
+                if (DataTemp < DateTime.Now.Date.AddYears(-65) || DataTemp > DateTime.Now.Date.AddYears(-18))
+                {
+                    Error = "Please make sure the trainer is between 18 and 65 years old : ";
+                }
+            }
+            catch
+            {
+                Error = Error + "Please enter a valid date following the correct format: dd/mm/yy";
+            }
+            
             return Error;
         }
     }

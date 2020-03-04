@@ -13,7 +13,7 @@ namespace GymTesting
         //create some test data to pass to the method
         string fullName = "Robert Smith";
         string gender = "Male";
-        DateTime dateOfBirth = DateTime.Now.Date;
+        string dateOfBirth = DateTime.Now.Date.AddYears(-28).ToString();
         string email = "robsmith662@gmail.com";
 
         [TestMethod]
@@ -311,6 +311,131 @@ namespace GymTesting
             clsTrainer ATrainer = new clsTrainer();
             String Error = "";
             String fullName = "AAAAAAAAAAAAAAAAAAAA";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsTrainer ATrainer = new clsTrainer();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is - 100 years
+            string dateOfBirth = TestDate.AddYears(-100).ToString();
+            //invoke the method
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void dateOfBirthMinMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - (65years + 1 day) shouldn't be accepted 
+            TestDate = DateTime.Now.Date.AddYears(-65).AddDays(-1).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthMinBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - 65 Years should be accepted
+            TestDate  = DateTime.Now.Date.AddYears(-65).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthMinPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - (65years - 1 day) should be accepted
+            TestDate = DateTime.Now.Date.AddYears(-65).AddDays(1).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void dateOfBirthMaxMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - (18years + 1 day) should be accepted
+            TestDate = DateTime.Now.Date.AddYears(-18).AddDays(-1).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthMaxBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - 18 Years should be accepted
+            TestDate = DateTime.Now.Date.AddYears(-18).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthMaxPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - (18years - 1 day) shouldnt be accepted
+            TestDate = DateTime.Now.Date.AddYears(-18).AddDays(1).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthMid()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date - 28 years
+            TestDate = DateTime.Now.Date.AddYears(-28).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthExtremeMax()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            string TestDate;
+            //todays date + 100years
+            TestDate = DateTime.Now.Date.AddYears(100).ToString();
+            Error = ATrainer.Valid(fullName, gender, TestDate, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthInvalidData()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            //todays date + 100years
+            String dateOfBirth = "this is not a date!";
             Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
             Assert.AreNotEqual(Error, "");
         }
