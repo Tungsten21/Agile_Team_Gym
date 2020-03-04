@@ -106,3 +106,18 @@ C:\Users\rosso\Desktop\New folder\GymTesting\obj\Debug\GymTesting.csprojAssembly
 C:\Users\rosso\Desktop\New folder\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
 C:\Users\rosso\Desktop\New folder\GymTesting\obj\Debug\GymTesting.dll
 C:\Users\rosso\Desktop\New folder\GymTesting\obj\Debug\GymTesting.pdb
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\GymTesting.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\GymTesting.pdb
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\GymClasses.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\GymClasses.pdb
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\rosso\Desktop\rossGit6\GymTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\rosso\Desktop\rossGit6\GymTesting\obj\Debug\GymTesting.csprojAssemblyReference.cache
+C:\Users\rosso\Desktop\rossGit6\GymTesting\obj\Debug\GymTesting.csproj.CopyComplete
+C:\Users\rosso\Desktop\rossGit6\GymTesting\obj\Debug\GymTesting.dll
+C:\Users\rosso\Desktop\rossGit6\GymTesting\obj\Debug\GymTesting.pdb
