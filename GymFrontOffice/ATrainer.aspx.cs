@@ -32,6 +32,7 @@ public partial class ATrainer : System.Web.UI.Page
 
     protected void btnFind_Click(object sender, EventArgs e)
     {
+
         //create an instance of the trainer class
         clsTrainer ATrainer = new clsTrainer();
         //variable to store the primary key
@@ -58,19 +59,39 @@ public partial class ATrainer : System.Web.UI.Page
     {
         //create a new instance of clsTrainer
         clsTrainer ATrainer = new clsTrainer();
-        //capture all the data
-        ATrainer.EmailAddress = txtEmail.Text;
-        int id = int.Parse(txtTrainerID.Text);
-        ATrainer.TrainerID = id;
-        ATrainer.FullName = txtFullname.Text;
-        ATrainer.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
-        ATrainer.Gender = txtGender.Text;
-        ATrainer.Retrained = chkRetrained.Checked;
 
-        //store the trainer in the session object
-        Session["ATrainer"] = ATrainer;
-        //redirect to the viewer page
-        Response.Redirect("TrainerViewer.aspx");
+        //capture all data for validation
+        string fullName = txtFullname.Text;
+        string gender = txtGender.Text;
+        string dateOfBirth = txtDateOfBirth.Text;
+        string email = txtEmail.Text;
+        //variable to store error messages
+        string Error = "";
+        Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+        if (Error == "")
+        {
+            //capture all the data
+            ATrainer.EmailAddress = txtEmail.Text;
+            int id = int.Parse(txtTrainerID.Text);
+            ATrainer.FullName = txtFullname.Text;
+            ATrainer.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
+            ATrainer.Gender = txtGender.Text;
+            ATrainer.Retrained = chkRetrained.Checked;
+
+            //store the trainer in the session object
+            Session["ATrainer"] = ATrainer;
+            //redirect to the viewer page
+            Response.Redirect("TrainerViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
     }
 
+
+    protected void txtTrainerID_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
