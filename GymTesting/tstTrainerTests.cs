@@ -314,6 +314,16 @@ namespace GymTesting
             Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
             Assert.AreNotEqual(Error, "");
         }
+        
+        [TestMethod]
+        public void fullNameNotBlank()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String fullName = "";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
 
         [TestMethod]
         public void dateOfBirthExtremeMin()
@@ -436,6 +446,187 @@ namespace GymTesting
             String Error = "";
             //todays date + 100years
             String dateOfBirth = "this is not a date!";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void dateOfBirthNotBlank()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            //todays date + 100years
+            String dateOfBirth = "";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMinMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Mal";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMinBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Male";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMinPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Male ";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMaxMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Femal";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMaxBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Female";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderMaxPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "Female ";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderLowerCaseMale()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "male";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderLowerCaseFemale()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "female";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void genderNoGender()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String gender = "";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailExtremeMin ()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "test";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMinMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "t@t.co";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMin()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "t@t.com";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMinPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "tt@t.com";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMaxMinusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "testtesttesttesttesttesttesttest@te.com";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMaxBoundary()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "testtesttesttesttesttesttesttest@tes.com";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailMaxPlusOne()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "testtesttesttesttesttesttesttest@test.com";
+            Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void emailExtremeMax()
+        {
+            clsTrainer ATrainer = new clsTrainer();
+            String Error = "";
+            String email = "testtesttesttesttesttesttesttest@testtesttestt.com";
             Error = ATrainer.Valid(fullName, gender, dateOfBirth, email);
             Assert.AreNotEqual(Error, "");
         }

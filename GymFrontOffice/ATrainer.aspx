@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div id="lblTrainerID">
             TrainerID
-            <asp:TextBox ID="txtTrainerID" runat="server" Height="16px"></asp:TextBox>
+            <asp:TextBox ID="txtTrainerID" runat="server" Height="16px" OnTextChanged="txtTrainerID_TextChanged" TextMode="Number"></asp:TextBox>
 &nbsp;<asp:Button ID="btnFind" runat="server" Height="20px" OnClick="btnFind_Click" Text="Find" Width="78px" />
             <br />
         <div id="lblFullName">
@@ -20,6 +20,7 @@
             <asp:Label ID="Label1" runat="server" Text="Gender"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtGender" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <asp:Label ID="lblDateOfBirth" runat="server" Text="D.O.B"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,6 +36,8 @@
             <asp:Button ID="btnView" runat="server" OnClick="btnView_Click" Text="View" Width="103px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="103px" />
+            <br />
+            <asp:Label ID="lblError" runat="server" BackColor="#CC0000" BorderColor="Black" BorderStyle="Solid" BorderWidth="3px" Text="No errors!"></asp:Label>
         </div>
     </form>
 </body>

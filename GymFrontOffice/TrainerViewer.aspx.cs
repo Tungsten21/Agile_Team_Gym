@@ -15,17 +15,16 @@ public partial class TrainerViewer : System.Web.UI.Page
         //get the data from the session object
         ATrainer = (clsTrainer)Session["ATrainer"];
         //display the Trainer id for this entry
-        Response.Write(ATrainer.TrainerID);
-        Response.Write("<br>");
-        Response.Write(ATrainer.EmailAddress);
+        
+        Response.Write(ATrainer.FullName);
         Response.Write("<br>");
         Response.Write(ATrainer.Gender);
         Response.Write("<br>");
         Response.Write(ATrainer.DateOfBirth.ToString("dd/MM/yyyy"));
         Response.Write("<br>");
-        Response.Write(ATrainer.Retrained);
+        Response.Write(ATrainer.EmailAddress);
         Response.Write("<br>");
-        Response.Write(ATrainer.FullName);
+        Response.Write(ATrainer.Retrained);
         Response.Write("<br>");
 
 

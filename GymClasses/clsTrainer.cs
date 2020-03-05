@@ -125,29 +125,53 @@ namespace GymClasses
             }
             if (fullName.Length == 1)
             {
-                Error = "Please enter a valid full name : ";
+                Error = Error + "Please enter a valid full name : ";
             }
             if (fullName.Length > 40)
             {
-                Error = "Please enter a full name less then 40 characters long : ";
+                Error = Error + "Please enter a full name less then 40 characters long : ";
             }
             if(!fullName.Contains(" "))
             {
-                Error = "Please enter a valid full name using the following format: 'Firstname Lastname' : " ; 
+                Error = Error + "Please enter a valid full name using the following format: 'Firstname Lastname' : " ; 
+            }
+            if(fullName == null || fullName == "")
+            {
+                Error = Error + "Please enter a full name : ";
+            }
+            {
+
             }
             try
             {
                 DataTemp = Convert.ToDateTime(dateOfBirth);
                 if (DataTemp < DateTime.Now.Date.AddYears(-65) || DataTemp > DateTime.Now.Date.AddYears(-18))
                 {
-                    Error = "Please make sure the trainer is between 18 and 65 years old : ";
+                    Error = Error + "Please make sure the trainer is between 18 and 65 years old : ";
                 }
             }
             catch
             {
-                Error = Error + "Please enter a valid date following the correct format: dd/mm/yy";
+                Error = Error + "Please enter a valid date following the correct format: dd/mm/yy : ";
             }
-            
+            if(gender != "Male" && gender != "Female" && gender !="male" && gender != "female")
+            {
+                Error = Error + "Please enter a gender of either: Male or Female : ";
+            }
+            if (!email.Contains("@") && !email.Contains("."))
+            {
+                Error = Error + "Please enter an email in a valid format e.g.: testemail@gmail.com : ";
+            }
+            if(email.Length < 7)
+            {
+                Error = Error + "Please enter an email greater than 6 characters long : ";
+            }
+            if (email.Length > 40)
+            {
+                Error = Error + "Please enter an email less than 40 characters long : ";
+            }
+
+
             return Error;
         }
     }
