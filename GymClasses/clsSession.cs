@@ -7,7 +7,7 @@ namespace GymTesting
         private int mSessionID;
         private int mTrainerID;
         private int mBranchID;
-        private string mType;
+        private string mSessionType;
         private double mCost;
         private DateTime mDateTime;
         private bool mEquipmentRequired;
@@ -25,8 +25,9 @@ namespace GymTesting
                 mSessionID = value;
             }
         }
-                
-        public int TrainerID {
+
+        public int TrainerID
+        {
             get
             {
                 //this line of code sends data out of the property
@@ -51,16 +52,17 @@ namespace GymTesting
                 mBranchID = value;
             }
         }
-        public String Type {
+        public String SessionType
+        {
             get
             {
                 //this line of code sends data out of the property
-                return mType;
+                return mSessionType;
             }
             set
             {
                 //this line of code allows data into the property
-                mType = value;
+                mSessionType = value;
             }
         }
 
@@ -104,16 +106,32 @@ namespace GymTesting
         }
         public bool Find(int SessionID)
         {
-            //set the private data members to th test data value
-            mSessionID = 3;
-            mTrainerID = 5;
-            mBranchID = 4;
-            mType= Convert.ToString("Swimming");
-            mCost =Convert.ToDouble(2.50);
-            mEquipmentRequired = Convert.ToBoolean(false );
-            mDateTime = Convert.ToDateTime("20/05/1990");
-            // always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the TrainerID to search for
+            DB.AddParameter("@SessionID", SessionID);
+            //execute the stored procedure
+            DB.Execute("sproc_SessionTable_FilterBySessionID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //set the private data members to th test data value
+                mSessionID = Convert.ToInt32(DB.DataTable.Rows[0]["SessionID"]);
+                mTrainerID = Convert.ToInt32(DB.DataTable.Rows[0]["TrainerID"]);
+                mBranchID = Convert.ToInt32(DB.DataTable.Rows[0]["BranchID"]);
+                mSessionType = Convert.ToString(DB.DataTable.Rows[0]["SessionType"]);
+                mCost = Convert.ToDouble(DB.DataTable.Rows[0]["Cost"]);
+                mEquipmentRequired = Convert.ToBoolean(DB.DataTable.Rows[0]["EquipmentRequired"]);
+                mDateTime = Convert.ToDateTime(DB.DataTable.Rows[0]["DateTime"]);
+                // always return true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a probelm
+                return false;
+            }
         }
     }
 }

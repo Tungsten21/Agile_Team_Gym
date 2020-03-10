@@ -31,7 +31,7 @@ public partial class SessionViewer : System.Web.UI.Page
        Response.Write(ASession.Cost);
        Response.Write("<br>");
 
-       Response.Write(ASession.datetime);
+       Response.Write(ASession.DateTime);
        Response.Write("<br>");
 
         Response.Write(ASession.EquipmentRequired);

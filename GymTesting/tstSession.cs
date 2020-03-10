@@ -69,9 +69,9 @@ namespace GymTesting
         public void TypePropertyOK()
         {
             clsSession ASession = new clsSession();
-            string type = "Cycling";
-            ASession.Type = type;
-            Assert.AreEqual(ASession.Type, type);
+            string type = "Swimming";
+            ASession.SessionType = type;
+            Assert.AreEqual(ASession.SessionType, type);
         }
 
 
@@ -92,9 +92,9 @@ namespace GymTesting
             //boolean variable to store the result of the validaiton
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 TestSessionID = 4;
+            Int32 SessionID = 4;
             //invoke the method
-            Found = ASession.Find(TestSessionID);
+            Found = ASession.Find(SessionID);
             //test to see th the result is correct
             Assert.IsTrue(Found);
 
@@ -110,15 +110,15 @@ namespace GymTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestSessionID = 3;
+            Int32 SessionID = 4;
             //invoke the method
-            Found = ASession.Find(ASession.SessionID);
+            Found = ASession.Find(SessionID);
             //check the Session ID
-            if (ASession.SessionID != 3)
+            if (ASession.SessionID != 4)
             {
                 OK = false;
             }
-
+            Assert.IsTrue(OK);
         }
 
         [TestMethod]
@@ -131,15 +131,15 @@ namespace GymTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestTrainerID = 5;
+            Int32 SessionID = 4;
             //invoke the method
-            Found = ASession.Find(ASession.SessionID);
+            Found = ASession.Find(SessionID);
             //check the Session ID
-            if (ASession.TrainerID != 5)
+            if (ASession.TrainerID != 3)
             {
                 OK = false;
             }
-
+            Assert.IsTrue(OK);
         }
         [TestMethod]
         public void TestBranchIDFound()
@@ -151,25 +151,25 @@ namespace GymTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestBranchID = 4;
+            Int32 SessionID = 4;
             //invoke the method
-            Found = ASession.Find(ASession.SessionID);
+            Found = ASession.Find(SessionID);
             //check the Session ID
-            if (ASession.BranchID != 4)
+            if (ASession.BranchID != 2)
             {
                 OK = false;
             }
-
+            Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void TestTypeFound()
+        public void TestSessionTypeFound()
         {
             clsSession ASession = new clsSession();
             Boolean Found = false;
             Boolean OK = true;
-            String TestType = "Swimming";
-            Found = ASession.Find(ASession.SessionID);
-            if (ASession.Type != "Swimming")
+            Int32 SessionID = 4;
+            Found = ASession.Find(SessionID);
+            if (ASession.SessionType != "Swimming")
             {
                 OK = false;
             }
@@ -185,16 +185,17 @@ namespace GymTesting
                Boolean Found = false;
         //boolean variable to record if data is OK(assume it is)
               Boolean OK = true;
-        //create some test data to use with the method
-             Double TestCost = 2.50;
-        //invoke the method
-              Found = ASession.Find(ASession.SessionID);
+            //create some test data to use with the method
+            Int32 SessionID = 4;
+            //invoke the method
+            Found = ASession.Find(SessionID);
         //check the Session ID
-             if (ASession.Cost != Convert.ToDouble(2.50))
+             if (ASession.Cost != Convert.ToDouble(3))
              {
                  OK = false;
              }
-    }
+            Assert.IsTrue(OK);
+        }
 
 [TestMethod]
         public void TestDateTimeFound()
@@ -206,11 +207,11 @@ namespace GymTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestSessionID = 21;
+            Int32 SessionID = 4;
             //invoke the method
-            Found = ASession.Find(ASession.SessionID);
+            Found = ASession.Find(SessionID);
             //check the property
-            if (ASession.DateTime != Convert.ToDateTime("20/05/1990"))
+            if (ASession.DateTime != Convert.ToDateTime("03/04/2020 04:43:23"))
             {
                 OK = false;
             }
@@ -224,8 +225,8 @@ namespace GymTesting
             clsSession ASession = new clsSession();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 TestTrainerID = 2;
-            Found = ASession.Find(ASession.SessionID);
+            Int32 SessionID = 4;
+            Found = ASession.Find(SessionID);
             if (ASession.EquipmentRequired != false)
             {
                 OK = false;
