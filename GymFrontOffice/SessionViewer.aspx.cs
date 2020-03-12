@@ -25,7 +25,7 @@ public partial class SessionViewer : System.Web.UI.Page
         Response.Write(ASession.BranchID);
         Response.Write("<br>");
 
-        Response.Write(ASession.Type);
+        Response.Write(ASession.SessionType);
         Response.Write("<br>");
 
        Response.Write(ASession.Cost);

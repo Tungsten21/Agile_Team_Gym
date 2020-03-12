@@ -10,34 +10,39 @@
     <form id="form2" runat="server">
         <div style="height: 397px">
             Session ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:TextBox ID="sessionID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
+          <asp:TextBox ID="txtSessionID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
             <br />
             <br />
             Trainer ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TrainerID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="txtTrainerID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
             <br />
             <br />
             Branch ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="BranchID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="txtBranchID" runat="server" Height="16px" Width="150px" TextMode="Number"></asp:TextBox>
             <br />
             <br />
             Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <asp:TextBox ID="Type" runat="server" Height="16px" Width="150px"></asp:TextBox>
+            <asp:TextBox ID="txtType" runat="server" Height="16px" Width="150px"></asp:TextBox>
             <br />
             <br />
-            DateTime:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:Calendar ID="Calendar1" runat="server" Height="173px" style="margin-top: 0px" Width="299px"></asp:Calendar>
+             <asp:Label ID="lblDateTime" runat="server" Text="DateTime"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtDateTime" runat="server"></asp:TextBox>
             <br />
             <br />
             Cost:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Cost" runat="server" Height="16px" Width="150px" ></asp:TextBox>
+            <asp:TextBox ID="txtCost" runat="server" Height="16px" Width="150px" ></asp:TextBox>
             <br />
             <br />
-             <asp:CheckBox ID="EquipmentRequired" runat="server" Text="Equipment Required" TextAlign="Left" />
+             <asp:CheckBox ID="chkEquipmentRequired" runat="server" Text="Equipment Required" TextAlign="Left" />
               <br />
               <br />
-            <asp:Button ID="ok" runat="server" Height="20px" OnClick="Button1_Click" Text="OK" Width="60px" />
-            <asp:Button ID="cancel" runat="server" Height="20px" OnClick="Button1_Click" Text="Cancel" Width="60px" />
+            <asp:Button ID="Ok" runat="server"  OnClick="Button1_Click" Text="OK" Width="103px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Cancel" runat="server" Text="Cancel" Width="103px" OnClick="Cancel_Click" />
+        &nbsp;&nbsp;&nbsp;
+           
+            <asp:Button ID="Find" runat="server" Text="Find"  OnClick="Find_Click" Width="103px" />
         </div>
     </form>
 </body>
