@@ -1,5 +1,4 @@
-﻿
-using GymClasses;
+﻿using GymClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;

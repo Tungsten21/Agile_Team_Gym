@@ -158,7 +158,7 @@ namespace GymClasses
             {
                 Error = Error + "Please enter a gender of either: Male or Female : ";
             }
-            if (!email.Contains("@") && !email.Contains("."))
+            if (!email.Contains("@") || !email.Contains("."))
             {
                 Error = Error + "Please enter an email in a valid format e.g.: testemail@gmail.com : ";
             }
