@@ -108,7 +108,7 @@ namespace GymTesting
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
-            //add the parameter for the TrainerID to search for
+            //add the parameter for the SessionID to search for
             DB.AddParameter("@SessionID", SessionID);
             //execute the stored procedure
             DB.Execute("sproc_SessionTable_FilterBySessionID");
@@ -133,5 +133,74 @@ namespace GymTesting
                 return false;
             }
         }
+        // function for th public validation method
+        public string Valid(string trainerID, string branchID, string type, string dateTime, string cost)
+        { //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
+            
+            //if the TrainerID is blank
+            if (trainerID.Length == 0)
+            {
+                //record the error
+                Error = Error + "The TrainerID may not be blank : ";
+            }
+            //if the TrainerID is greater than 6 characters
+            if (trainerID.Length > 6)
+            {
+                //record the error
+                Error = Error + "The TrainerID must be less than 6 characters : ";
+            }
+
+            if (branchID.Length == 0)
+            {
+                //record the error
+                Error = Error + "The branchID may not be blank : ";
+            }
+            //if the TrainerID is greater than 6 characters
+            if (branchID.Length > 6)
+            {
+                //record the error
+                Error = Error + "The branchID must be less than 6 characters : ";
+            }
+            try
+            {
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateTime);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is greater than today's date
+                
+            }
+
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date : ";
+            }
+                        //is the street blank
+            if (type.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Type may not be blank : ";
+            }
+            //if the street is too long
+            if (type.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Type must be less than 50 characters : ";
+            }
+            //return any error messages
+            return Error;
+
+            
+
+        }
+
     }
 }
+
