@@ -43,6 +43,8 @@
         &nbsp;&nbsp;&nbsp;
            
             <asp:Button ID="Find" runat="server" Text="Find"  OnClick="Find_Click" Width="103px" />
+            <br />
+            <asp:Label ID="lblError" runat="server" Text="No Errors"></asp:Label>
         </div>
     </form>
 </body>

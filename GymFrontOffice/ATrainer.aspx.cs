@@ -9,9 +9,21 @@ using System.Web.UI.WebControls;
 
 public partial class ATrainer : System.Web.UI.Page
 {
+    //var to stor the primary key with page level scope
+    Int32 TrainerID;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //get the trainerID of the trainer to processed
+        TrainerID = Convert.ToInt32(Session["TrainerID"]);
+        if (IsPostBack == false)
+        {
+            //if this is not a new record
+            if(TrainerID != -1)
+            {
+                //display the current data for the record
+                DisplayTrainer();
+            }
+        }
     }
 
     protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -48,7 +60,7 @@ public partial class ATrainer : System.Web.UI.Page
             //display the values of the properties in the form
             txtFullname.Text = ATrainer.FullName;
             txtGender.Text = ATrainer.Gender;
-            txtDateOfBirth.Text = ATrainer.DateOfBirth.ToString();
+            txtDateOfBirth.Text = ATrainer.DateOfBirth.ToShortDateString();
             txtEmail.Text = ATrainer.EmailAddress;
             chkRetrained.Checked = ATrainer.Retrained;
         }
@@ -70,17 +82,38 @@ public partial class ATrainer : System.Web.UI.Page
         if (Error == "")
         {
             //capture all the data
-            ATrainer.EmailAddress = txtEmail.Text;
-            int id = int.Parse(txtTrainerID.Text);
-            ATrainer.FullName = txtFullname.Text;
-            ATrainer.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
-            ATrainer.Gender = txtGender.Text;
+            ATrainer.EmailAddress = email;
+            ATrainer.TrainerID = TrainerID;
+            ATrainer.FullName = fullName;
+            ATrainer.DateOfBirth = Convert.ToDateTime(dateOfBirth);
+            ATrainer.Gender = gender;
             ATrainer.Retrained = chkRetrained.Checked;
 
-            //store the trainer in the session object
-            Session["ATrainer"] = ATrainer;
-            //redirect to the viewer page
-            Response.Redirect("TrainerViewer.aspx");
+            //create a new instance of the trainer collection
+            clsTrainerCollection AllTrainers = new clsTrainerCollection();
+
+            //if this is a new record i.e. Trainer ID = -1 then add the data
+            if(TrainerID == -1)
+            {
+                //set the ThisTrainer property
+                AllTrainers.ThisTrainer = ATrainer;
+                //add the new record
+                AllTrainers.Add();
+               
+            }
+            else //otherwise it must be an update
+            {
+                //find the record to update
+                AllTrainers.ThisTrainer.Find(TrainerID);
+                //set the ThisTrainer property
+                AllTrainers.ThisTrainer = ATrainer;
+                //update the record
+                AllTrainers.Update();
+            }
+
+            //redirect back to the listpage
+            Response.Redirect("DefaultTrainer.aspx");
+           
         }
         else
         {
@@ -92,5 +125,20 @@ public partial class ATrainer : System.Web.UI.Page
     protected void txtTrainerID_TextChanged(object sender, EventArgs e)
     {
 
+    }
+
+    void DisplayTrainer()
+    {
+        //create an instance of the trainer collection
+        clsTrainerCollection Trainers = new clsTrainerCollection();
+        //find the record to update
+        Trainers.ThisTrainer.Find(TrainerID);
+        //dispaly the data for this record
+        txtTrainerID.Text = Trainers.ThisTrainer.TrainerID.ToString();
+        txtFullname.Text = Trainers.ThisTrainer.FullName;
+        txtEmail.Text = Trainers.ThisTrainer.EmailAddress;
+        txtGender.Text = Trainers.ThisTrainer.Gender;
+        txtDateOfBirth.Text = Trainers.ThisTrainer.DateOfBirth.ToString();
+        chkRetrained.Checked = Trainers.ThisTrainer.Retrained;
     }
 }

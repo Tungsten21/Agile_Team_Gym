@@ -32,4 +32,55 @@ public partial class _Default : System.Web.UI.Page
             lstTrainerList.DataBind();
         }
     }
+
+    //event handler for the add button
+    protected void AddClick(object sender, EventArgs e)
+    {
+        //store -1 into the session object to indicate this is a new record
+        Session["TrainerID"] = -1;
+        //redirect to the data entry page
+        Response.Redirect("ATrainer.aspx");
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be deleted
+        Int32 TrainerID;
+        //if a record has been selected from the list
+        if(lstTrainerList.SelectedIndex != -1)
+        {
+            //get the primary key of the record to delete
+            TrainerID = Convert.ToInt32(lstTrainerList.SelectedValue);
+            //store the data in the session object
+            Session["TrainerID"] = TrainerID;
+            //redirect to the delete page
+            Response.Redirect("DeleteTrainer.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a trainer to delete from the list";
+        }
+    }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key valye of the record to be edited
+        Int32 TrainerID;
+        //if a record has been selected from the list
+        if(lstTrainerList.SelectedIndex !=  -1)
+        {
+            //get the primary key of the record to edit
+            TrainerID = Convert.ToInt32(lstTrainerList.SelectedValue);
+            //store the data in the session object
+            Session["TrainerID"] = TrainerID;
+            //redirect to the edit page
+            Response.Redirect("ATrainer.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a Trainer to update";
+        }
+    }
 }

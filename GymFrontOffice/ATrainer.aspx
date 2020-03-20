@@ -33,7 +33,7 @@
             <asp:CheckBox ID="chkRetrained" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1" Text="Retrained in the last 3 years?" TextAlign="Left" />
             <br />
             <br />
-            <asp:Button ID="btnView" runat="server" OnClick="btnView_Click" Text="View" Width="103px" />
+            <asp:Button ID="btnView" runat="server" OnClick="btnView_Click" Text="OK" Width="103px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="103px" />
             <br />

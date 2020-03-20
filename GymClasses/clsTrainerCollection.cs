@@ -8,6 +8,10 @@ namespace GymClasses
 
         //private member for the list
         List<clsTrainer> pTrainerList = new List<clsTrainer>();
+        //private data member for thisTrainer
+        clsTrainer pThisTrainer = new clsTrainer();
+
+
 
 
         //constructor for the class
@@ -67,6 +71,60 @@ namespace GymClasses
                 //we shall worry about this later
             }
         }
-        public clsTrainer ThisTrainer { get; set; }
+        public clsTrainer ThisTrainer
+        {
+            get
+            {
+                //return the privata data
+                return pThisTrainer;
+            }
+            set
+            {
+                pThisTrainer = value;
+            }
+        }
+        public int Add()
+        {
+            //adds a new record to the database based on the valuees of thisAddress
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@FullName", pThisTrainer.FullName);
+            DB.AddParameter("@Gender", pThisTrainer.Gender);
+            DB.AddParameter("@DateOfBirth", pThisTrainer.DateOfBirth);
+            DB.AddParameter("@RetrainedLastThreeYears", pThisTrainer.Retrained);
+            DB.AddParameter("@EmailAddress", pThisTrainer.EmailAddress);
+            //exeute the query returning the primary key value
+            return DB.Execute("sproc_tblTrainer_Insert");
+
+
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisTrainer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@TrainerID", pThisTrainer.TrainerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblTrainer_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of ThisTrainer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@TrainerID", pThisTrainer.TrainerID);
+            DB.AddParameter("@FullName", pThisTrainer.FullName);
+            DB.AddParameter("@Gender", pThisTrainer.Gender);
+            DB.AddParameter("@DateOfBirth", pThisTrainer.DateOfBirth);
+            DB.AddParameter("@RetrainedLastThreeYears", pThisTrainer.Retrained);
+            DB.AddParameter("@EmailAddress", pThisTrainer.EmailAddress);
+            //execute the stored procedure
+            DB.Execute("sproc_tblTrainer_Update");
+        }
     }
 }

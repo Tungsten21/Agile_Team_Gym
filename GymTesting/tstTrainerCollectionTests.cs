@@ -90,6 +90,106 @@ namespace GymTesting
             Assert.AreEqual(AllTrainers.Count, TestList.Count);
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsTrainerCollection AllTrainers = new clsTrainerCollection();
+            //create the item of test data
+            clsTrainer TestItem = new clsTrainer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.TrainerID = 44;
+            TestItem.FullName = "Ross O'Donegan";
+            TestItem.EmailAddress = "rodonegan11@gmail.com";
+            TestItem.Gender = "Male";
+            TestItem.Retrained = true;
+            TestItem.DateOfBirth = DateTime.Parse("17/05/2000");
+            //set ThisAddress to the test data
+            AllTrainers.ThisTrainer = TestItem;
+            //add the record
+            PrimaryKey = AllTrainers.Add();
+            //set the primary key to the test data
+            TestItem.TrainerID = PrimaryKey;
+            //find the record
+            AllTrainers.ThisTrainer.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllTrainers.ThisTrainer, TestItem);
+            
+
+        }
+        
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsTrainerCollection AllTrainers = new clsTrainerCollection();
+            //create an item of test data
+            clsTrainer TestItem = new clsTrainer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.TrainerID = 44;
+            TestItem.FullName = "Ross O'Donegan";
+            TestItem.EmailAddress = "rodonegan11@gmail.com";
+            TestItem.Gender = "Male";
+            TestItem.Retrained = true;
+            TestItem.DateOfBirth = DateTime.Parse("17/05/2000");
+            //set ThisTrainer to the test data
+            AllTrainers.ThisTrainer = TestItem;
+            //add the record
+            PrimaryKey = AllTrainers.Add();
+            //set the primary key of the test data
+            TestItem.TrainerID = PrimaryKey;
+            //find the record
+            AllTrainers.ThisTrainer.Find(PrimaryKey);
+            //delete the record
+            AllTrainers.Delete();
+            //now find the record
+            Boolean Found = AllTrainers.ThisTrainer.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
+
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsTrainerCollection AllTrainers = new clsTrainerCollection();
+            //create an item of test data
+            clsTrainer TestItem = new clsTrainer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties 
+            TestItem.FullName = "Ross O'DoneganUPDATE";
+            TestItem.EmailAddress = "rodonegan11@gmail.com";
+            TestItem.Gender = "Male";
+            TestItem.Retrained = true;
+            TestItem.DateOfBirth = DateTime.Parse("17/05/2000");
+            //set ThisTrainer to the test data
+            AllTrainers.ThisTrainer = TestItem;
+            //set the primary key of the test data
+            PrimaryKey = AllTrainers.Add();
+            //set the primary key of the test data
+            TestItem.TrainerID = PrimaryKey;
+            //modify the test data
+            TestItem.FullName = "2Ross O'DoneganUPDATE";
+            TestItem.EmailAddress = "2rodonegan11@gmail.com";
+            TestItem.Gender = "Female";
+            TestItem.Retrained = true;
+            TestItem.DateOfBirth = DateTime.Parse("27/05/2000");
+            //set the record based on the new test data
+            AllTrainers.ThisTrainer = TestItem;
+            //update the record
+            AllTrainers.Update();
+            //fimd the record
+            AllTrainers.ThisTrainer.Find(PrimaryKey);
+            //test to see ThisTrainer matches the test data
+            Assert.AreEqual(AllTrainers.ThisTrainer, TestItem);
+        }
+
        
     }
 }
