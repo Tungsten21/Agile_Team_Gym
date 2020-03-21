@@ -191,6 +191,61 @@ namespace GymTesting
             //
         }
 
+        [TestMethod]
+        public void ReportByGenderMethodOK()
+        {
+            //create an instance of the class containing unflitered results
+            clsTrainerCollection AllTrainers = new clsTrainerCollection();
+            //create  an instance of the filtered data
+            clsTrainerCollection FilteredTrainers = new clsTrainerCollection();
+            //apply a blank string (should return all records)
+            FilteredTrainers.ReportByGender("");
+            Assert.AreEqual(AllTrainers.Count, FilteredTrainers.Count);
+        }
        
+        [TestMethod]
+        public void ReportByPostCodeNoneFound()
+        {
+            //create an instance of the filtered data
+            clsTrainerCollection FilteredTrainers = new clsTrainerCollection();
+            //apply a gender that doesnt exist
+            FilteredTrainers.ReportByGender("Hello");
+            //test to see that that there are no records
+            Assert.AreEqual(0, FilteredTrainers.Count);
+            
+        }
+
+        [TestMethod]
+        public void ReportByGenderMaleFound()
+        {
+            //create an instance of the filtered data
+            clsTrainerCollection FilteredTrainers = new clsTrainerCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply a gender that doesn't exist (but is in the database)
+            FilteredTrainers.ReportByGender("TEST");
+            //check that the correct number of records are found
+            if(FilteredTrainers.Count == 2)
+            {
+                //check that the first record ID is 35
+                if(FilteredTrainers.TrainerList[0].TrainerID != 35)
+                {
+                    OK = false;
+                }
+                //check that the second record ID is 36
+                if (FilteredTrainers.TrainerList[1].TrainerID != 36)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to to see the correct amount of records were shown
+            Assert.IsTrue(OK);
+            
+
+        }
     }
 }

@@ -18,33 +18,12 @@ namespace GymClasses
 
         public clsTrainerCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
-            //object for data connection
+            //object for data connection 
             clsDataConnection DB = new clsDataConnection();
-            //execute the store procedure
+            //excecute the stored procedure
             DB.Execute("sproc_tblTrainer_SelectAll");
-            //get the count of the records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while( Index < RecordCount)
-            {
-                //create a blank trainer
-                clsTrainer ATrainer = new clsTrainer();
-                //read in the fields from the current record
-                ATrainer.TrainerID = Convert.ToInt32(DB.DataTable.Rows[Index]["TrainerID"]);
-                ATrainer.FullName = Convert.ToString(DB.DataTable.Rows[Index]["FullName"]);
-                ATrainer.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
-                ATrainer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
-                ATrainer.EmailAddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
-                ATrainer.Retrained = Convert.ToBoolean(DB.DataTable.Rows[Index]["RetrainedLastThreeYears"]);
-                //add the record to private data member
-                pTrainerList.Add(ATrainer);
-                //point to the next record
-                Index++;
-            }
+            //populate the array list with the data table
+            PopulateArray(DB);
         }
         public List<clsTrainer> TrainerList
         {
@@ -125,6 +104,49 @@ namespace GymClasses
             DB.AddParameter("@EmailAddress", pThisTrainer.EmailAddress);
             //execute the stored procedure
             DB.Execute("sproc_tblTrainer_Update");
+        }
+
+        public void ReportByGender(string Gender)
+        {
+            //filters the records based on gender
+            //conect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the gender param to the database
+            DB.AddParameter("@Gender", Gender);
+            //execute the store procedure
+            DB.Execute("sproc_tblTrainer_FilterByGender");
+            //poplulate the array list with the data table
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //var for the index = 0;
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of the records
+            RecordCount = DB.Count;
+            //clear the private array list
+            pTrainerList = new List<clsTrainer>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank trainer
+                clsTrainer ATrainer = new clsTrainer();
+                //read in the fields from the current record
+                ATrainer.TrainerID = Convert.ToInt32(DB.DataTable.Rows[Index]["TrainerID"]);
+                ATrainer.FullName = Convert.ToString(DB.DataTable.Rows[Index]["FullName"]);
+                ATrainer.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
+                ATrainer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                ATrainer.EmailAddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
+                ATrainer.Retrained = Convert.ToBoolean(DB.DataTable.Rows[Index]["RetrainedLastThreeYears"]);
+                //add the record to private data member
+                pTrainerList.Add(ATrainer);
+                //point to the next record
+                Index++;
+            }
         }
     }
 }

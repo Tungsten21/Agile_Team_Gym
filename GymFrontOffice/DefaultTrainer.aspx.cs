@@ -83,4 +83,38 @@ public partial class _Default : System.Web.UI.Page
             lblError.Text = "Please select a Trainer to update";
         }
     }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        //create an instance of the trainer collection
+        clsTrainerCollection Trainers = new clsTrainerCollection();
+        Trainers.ReportByGender(txtFilter.Text);
+        lstTrainerList.DataSource = Trainers.TrainerList;
+        //set the name of the primary key
+        lstTrainerList.DataValueField = "TrainerID";
+        //set the name of the field to display
+        lstTrainerList.DataTextField = "FullName";
+        //bind the data to the list
+        lstTrainerList.DataBind();
+
+    }
+
+    protected void TextBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        //create an instance of the trainer collection
+        clsTrainerCollection Trainers = new clsTrainerCollection();
+        Trainers.ReportByGender("");
+        //clear any existing filter to tidy up the interface
+        txtFilter.Text = "";
+        lstTrainerList.DataValueField = "TrainerID";
+        //set the name of the field to display
+        lstTrainerList.DataTextField = "FullName";
+        //bind the data to the list
+        lstTrainerList.DataBind();
+    }
 }
