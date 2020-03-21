@@ -188,6 +188,7 @@ namespace GymTesting
             AllTrainers.ThisTrainer.Find(PrimaryKey);
             //test to see ThisTrainer matches the test data
             Assert.AreEqual(AllTrainers.ThisTrainer, TestItem);
+            //
         }
 
        
