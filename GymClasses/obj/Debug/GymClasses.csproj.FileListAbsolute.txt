@@ -48,6 +48,5 @@ C:\Users\rosso\Desktop\rossGit8\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGit8\GymClasses\obj\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\rossGitt\GymClasses\bin\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGitt\GymClasses\bin\Debug\GymClasses.pdb
-C:\Users\rosso\Desktop\rossGitt\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
 C:\Users\rosso\Desktop\rossGitt\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGitt\GymClasses\obj\Debug\GymClasses.pdb
