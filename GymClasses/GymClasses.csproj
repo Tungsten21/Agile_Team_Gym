@@ -44,6 +44,7 @@
     <Compile Include="classMember.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsSession.cs" />
+    <Compile Include="clsSessionCollection.cs" />
     <Compile Include="clsTrainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

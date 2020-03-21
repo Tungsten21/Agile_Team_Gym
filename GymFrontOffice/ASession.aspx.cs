@@ -22,30 +22,47 @@ public partial class ASession : System.Web.UI.Page
     {
         //create a new instance of clsTrainer
         clsSession ASession = new clsSession();
-        //capture all the data
-        int sessionid = int.Parse(txtSessionID.Text);
-        ASession.SessionID = sessionid;
+                //capture all data for validation
+        string trainerID = txtTrainerID.Text;
+        string branchID = txtBranchID.Text;
+        string dateTime = txtDateTime.Text;
+        string type = txtType.Text;
+        string cost = txtCost.Text;
+        //variable to store error messages
+        string Error = "";
+        Error = ASession.Valid(trainerID, branchID, type, dateTime, cost);
+        if (Error == "")
+        {
+            //capture all the data
+            int sessionid = int.Parse(txtSessionID.Text);
+            ASession.SessionID = sessionid;
 
-        int trainerid = int.Parse(txtTrainerID.Text);
-        ASession.TrainerID = trainerid;
+            int trainerid = int.Parse(txtTrainerID.Text);
+            ASession.TrainerID = trainerid;
 
-        int Branchid = int.Parse(txtBranchID.Text);
-        ASession.BranchID = Branchid;
-        ASession.DateTime = Convert.ToDateTime(txtDateTime.Text);
-        ASession.SessionType = txtType.Text;
+            int Branchid = int.Parse(txtBranchID.Text);
+            ASession.BranchID = Branchid;
+            ASession.DateTime = Convert.ToDateTime(txtDateTime.Text);
+            ASession.SessionType = txtType.Text;
 
-        ASession.Cost = Double.Parse(txtCost.Text);
+            ASession.Cost = Double.Parse(txtCost.Text);
 
-        ASession.EquipmentRequired = chkEquipmentRequired.Checked;
+            ASession.EquipmentRequired = chkEquipmentRequired.Checked;
 
-        //store the address in the session object
-        Session["ASession"] = ASession;
-        //redirect to the viewer page
-        Response.Redirect("SessionViewer.aspx");
+            //store the address in the session object
+            Session["ASession"] = ASession;
+            //redirect to the viewer page
+            Response.Redirect("SessionViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
+
     }
 
 
-    
+
 
     protected void Find_Click(object sender, EventArgs e)
     {
