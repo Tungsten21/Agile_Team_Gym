@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GymBackOffice",
+    "\\GymClasses",
+    "\\GymFrontOffice",
+    "\\tstBooking,cs"
   ],
-  "SelectedNode": "\\GymSystem.sln",
+  "SelectedNode": "\\tstBooking,cs\\UnitTest1.cs",
   "PreviewInSolutionExplorer": false
 }
