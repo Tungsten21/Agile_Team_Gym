@@ -9,50 +9,70 @@ using GymClasses;
 
 public partial class ASession : System.Web.UI.Page
 {
-  
+    Int32 SessionID;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        SessionID = Convert.ToInt32(Session["SessionID"]);
+        if (IsPostBack ==false)
+        {
+            if(SessionID !=-1)
+            {
+                DisplaySession();
+            }
+        }
     }
-    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-    {
 
+    void DisplaySession()
+    {
+        clsSessionCollection SessionBook = new clsSessionCollection();
+        SessionBook.ThisSession.Find(SessionID);
+        txtSessionID.Text=SessionBook.ThisSession.SessionID.ToString();
+        txtTrainerID.Text = SessionBook.ThisSession.TrainerID.ToString();
+        txtBranchID.Text= SessionBook.ThisSession.BranchID.ToString();
+        txtDateTime.Text = SessionBook.ThisSession.DateTime.ToString();
+        chkEquipmentRequired.Checked = SessionBook.ThisSession.EquipmentRequired;
+        txtCost.Text = SessionBook.ThisSession.Cost.ToString();
+        txtType.Text = SessionBook.ThisSession.SessionType;
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
         //create a new instance of clsTrainer
         clsSession ASession = new clsSession();
                 //capture all data for validation
-        string trainerID = txtTrainerID.Text;
-        string branchID = txtBranchID.Text;
-        string dateTime = txtDateTime.Text;
-        string type = txtType.Text;
-        string cost = txtCost.Text;
+        string TrainerID = txtTrainerID.Text;
+        string BranchID = txtBranchID.Text;
+        string DateTime = txtDateTime.Text;
+        string SessionType = txtType.Text;
+        string Cost = txtCost.Text;
         //variable to store error messages
         string Error = "";
-        Error = ASession.Valid(trainerID, branchID, type, dateTime, cost);
+        Error = ASession.Valid(TrainerID, BranchID, SessionType, DateTime, Cost);
         if (Error == "")
         {
-            //capture all the data
-            int sessionid = int.Parse(txtSessionID.Text);
-            ASession.SessionID = sessionid;
-
-            int trainerid = int.Parse(txtTrainerID.Text);
-            ASession.TrainerID = trainerid;
-
-            int Branchid = int.Parse(txtBranchID.Text);
-            ASession.BranchID = Branchid;
-            ASession.DateTime = Convert.ToDateTime(txtDateTime.Text);
-            ASession.SessionType = txtType.Text;
-
-            ASession.Cost = Double.Parse(txtCost.Text);
-
+            ASession.SessionID = SessionID;
+            ASession.TrainerID = Convert.ToInt32(TrainerID);
+            ASession.BranchID = Convert.ToInt32(BranchID);
+            ASession.DateTime = Convert.ToDateTime(DateTime);
+            ASession.SessionType = SessionType;
+            ASession.Cost = Double.Parse(Cost);
             ASession.EquipmentRequired = chkEquipmentRequired.Checked;
 
-            //store the address in the session object
-            Session["ASession"] = ASession;
-            //redirect to the viewer page
-            Response.Redirect("SessionViewer.aspx");
+            clsSessionCollection SessionList = new clsSessionCollection();
+            if (SessionID == -1)
+            {
+                SessionList.ThisSession = ASession;
+                SessionList.Add();
+            }
+
+            else
+            {
+                SessionList.ThisSession.Find(SessionID);
+                SessionList.ThisSession = ASession;
+                SessionList.Update();
+            }
+            Response.Redirect("SessionList.aspx");
+
         }
         else
         {
@@ -60,7 +80,6 @@ public partial class ASession : System.Web.UI.Page
         }
 
     }
-
 
 
 
@@ -91,9 +110,12 @@ public partial class ASession : System.Web.UI.Page
 
 
     }
-
-
     protected void Cancel_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void chkEquipmentRequired_CheckedChanged(object sender, EventArgs e)
     {
 
     }
