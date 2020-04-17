@@ -78,12 +78,129 @@ namespace GymTesting
         }
 
 
-//        [TestMethod]
-//        public void TwoRecordsPresent()
-//        {
-//           clsSessionCollection AllSession = new clsSessionCollection();
-//           Assert.AreEqual(AllSession.Count, 2);
-//       }
+        //        [TestMethod]
+        //        public void TwoRecordsPresent()
+        //        {
+        //           clsSessionCollection AllSession = new clsSessionCollection();
+        //           Assert.AreEqual(AllSession.Count, 2);
+        //       }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsSessionCollection AllSession = new clsSessionCollection();
+            clsSession TestItem = new clsSession();
+            Int32 PrimaryKey = 0;
+            TestItem.EquipmentRequired = true;
+            TestItem.TrainerID = 4;
+            TestItem.BranchID = 3;
+            TestItem.SessionID = 51;
+            TestItem.SessionType = "Some Type";
+            TestItem.DateTime = DateTime.Now.Date;
+            TestItem.Cost = 5;
+            AllSession.ThisSession = TestItem;
+            PrimaryKey = AllSession.Add();
+            //set the primary key of the test data
+            TestItem.SessionID = PrimaryKey;
+            //find the record
+            AllSession.ThisSession.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllSession.ThisSession, TestItem);
+        }
 
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsSessionCollection AllSession = new clsSessionCollection();
+            clsSession TestItem = new clsSession();
+            Int32 PrimaryKey = 0;
+            TestItem.EquipmentRequired = true;
+            TestItem.TrainerID = 4;
+            TestItem.BranchID = 3;
+            TestItem.SessionID = 51;
+            TestItem.SessionType = "Some Type";
+            TestItem.DateTime = DateTime.Now.Date;
+            TestItem.Cost = 5;
+            AllSession.ThisSession = TestItem;
+            PrimaryKey = AllSession.Add();
+            TestItem.SessionID = PrimaryKey;
+            AllSession.ThisSession.Find(PrimaryKey);
+            AllSession.Delete();
+            Boolean Found = AllSession.ThisSession.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsSessionCollection AllSession = new clsSessionCollection();
+            clsSession TestItem = new clsSession();
+            Int32 PrimaryKey = 0;
+            TestItem.EquipmentRequired = true;
+            TestItem.TrainerID = 4;
+            TestItem.BranchID = 3;
+            TestItem.SessionID = 51;
+            TestItem.SessionType = "Some Type";
+            TestItem.DateTime = DateTime.Now.Date;
+            TestItem.Cost = 5;
+            AllSession.ThisSession = TestItem;
+            PrimaryKey = AllSession.Add();
+            TestItem.SessionID = PrimaryKey;
+            
+            TestItem.EquipmentRequired = true;
+            TestItem.TrainerID = 4;
+            TestItem.BranchID = 3;
+            TestItem.SessionID = 51;
+            TestItem.SessionType = "Some Type";
+            TestItem.DateTime = DateTime.Now.Date;
+            TestItem.Cost = 5;
+            AllSession.ThisSession = TestItem;
+            PrimaryKey = AllSession.Update();
+            AllSession.ThisSession.Find(PrimaryKey);
+            Assert.AreEqual(AllSession.ThisSession, TestItem);
+
+        }
+
+        [TestMethod]
+        public void ReportBySessionTypeMehtodOK()
+        {
+            clsSessionCollection AllSession = new clsSessionCollection();
+            clsSessionCollection FilteredSessions = new clsSessionCollection();
+            FilteredSessions.ReportBySessionType("");
+            Assert.AreEqual(AllSession.Count, FilteredSessions.Count);
+        }
+
+        [TestMethod]
+        public void ReportBySessionTypeNoneFound()
+        {
+            clsSessionCollection FilteredSessions = new clsSessionCollection();
+            FilteredSessions.ReportBySessionType("xxxxxx");
+            Assert.AreEqual(0, FilteredSessions.Count);
+        }
+
+        [TestMethod]
+        public void ReportBySessionTypeTestDataFound()
+        {
+            clsSessionCollection FilteredSessions = new clsSessionCollection();
+            Boolean OK = true;
+            FilteredSessions.ReportBySessionType("xxx xxx");
+            if (FilteredSessions.Count == 2)
+            {
+                if( FilteredSessions.SessionList[0].SessionID != 19)
+                {
+                    OK = false;
+                }
+                if (FilteredSessions.SessionList[1].SessionID != 20)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+
+        }
     }
 }
