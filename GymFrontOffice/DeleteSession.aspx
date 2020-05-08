@@ -11,6 +11,7 @@
         <div>
             Are you sure you want to delete this record?<br />
             <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" />
+            &nbsp;&nbsp;
             <asp:Button ID="btnNo" runat="server" OnClick="Button2_Click" Text="No" />
         </div>
     </form>

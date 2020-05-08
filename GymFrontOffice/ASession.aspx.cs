@@ -14,6 +14,7 @@ public partial class ASession : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         SessionID = Convert.ToInt32(Session["SessionID"]);
+
         if (IsPostBack ==false)
         {
             if(SessionID !=-1)
@@ -50,12 +51,12 @@ public partial class ASession : System.Web.UI.Page
         Error = ASession.Valid(TrainerID, BranchID, SessionType, DateTime, Cost);
         if (Error == "")
         {
-            ASession.SessionID = SessionID;
+           ASession.SessionID = SessionID;
             ASession.TrainerID = Convert.ToInt32(TrainerID);
             ASession.BranchID = Convert.ToInt32(BranchID);
             ASession.DateTime = Convert.ToDateTime(DateTime);
             ASession.SessionType = SessionType;
-            ASession.Cost = Double.Parse(Cost);
+            ASession.Cost = Decimal.Parse(Cost);
             ASession.EquipmentRequired = chkEquipmentRequired.Checked;
 
             clsSessionCollection SessionList = new clsSessionCollection();
