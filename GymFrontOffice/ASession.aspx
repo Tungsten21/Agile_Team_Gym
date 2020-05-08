@@ -42,7 +42,7 @@
             <asp:Button ID="Cancel" runat="server" Text="Cancel"  Width="110px" OnClick="Cancel_Click" BackColor="#CC0000" Height="45px" />
             <br />
             <br />
-            Cost:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<asp:TextBox ID="txtCost" runat="server" Height="27px" Width="151px" BackColor="#CCCCCC" ></asp:TextBox>
+            Cost:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<asp:TextBox ID="txtCost" runat="server" Height="27px" Width="151px" BackColor="#CCCCCC"  ></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <asp:CheckBox ID="chkEquipmentRequired" runat="server" Text="Equipment Required:  " TextAlign="Left" BackColor="White" OnCheckedChanged="chkEquipmentRequired_CheckedChanged" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -91,10 +91,10 @@ namespace GymTesting
             clsSession TestItem = new clsSession();
             Int32 PrimaryKey = 0;
             TestItem.EquipmentRequired = true;
-            TestItem.TrainerID = 4;
-            TestItem.BranchID = 3;
-            TestItem.SessionID = 51;
-            TestItem.SessionType = "Some Type";
+            TestItem.TrainerID = 1;
+            TestItem.BranchID = 1;
+            TestItem.SessionID = 2;
+            TestItem.SessionType = "Add Method";
             TestItem.DateTime = DateTime.Now.Date;
             TestItem.Cost = 5;
             AllSession.ThisSession = TestItem;
@@ -117,7 +117,7 @@ namespace GymTesting
             TestItem.TrainerID = 4;
             TestItem.BranchID = 3;
             TestItem.SessionID = 51;
-            TestItem.SessionType = "Some Type";
+            TestItem.SessionType = "Delete Method";
             TestItem.DateTime = DateTime.Now.Date;
             TestItem.Cost = 5;
             AllSession.ThisSession = TestItem;
@@ -138,21 +138,21 @@ namespace GymTesting
             TestItem.EquipmentRequired = true;
             TestItem.TrainerID = 4;
             TestItem.BranchID = 3;
-            TestItem.SessionID = 51;
-            TestItem.SessionType = "Some Type";
+            TestItem.SessionType = "update Method";
             TestItem.DateTime = DateTime.Now.Date;
             TestItem.Cost = 5;
+
             AllSession.ThisSession = TestItem;
             PrimaryKey = AllSession.Add();
             TestItem.SessionID = PrimaryKey;
             
-            TestItem.EquipmentRequired = true;
-            TestItem.TrainerID = 4;
-            TestItem.BranchID = 3;
-            TestItem.SessionID = 51;
-            TestItem.SessionType = "Some Type";
+            TestItem.EquipmentRequired = false;
+            TestItem.TrainerID = 2;
+            TestItem.BranchID = 6;
+            TestItem.SessionType = "update Method";
             TestItem.DateTime = DateTime.Now.Date;
-            TestItem.Cost = 5;
+            TestItem.Cost = 3;
+
             AllSession.ThisSession = TestItem;
             PrimaryKey = AllSession.Update();
             AllSession.ThisSession.Find(PrimaryKey);
@@ -161,7 +161,7 @@ namespace GymTesting
         }
 
         [TestMethod]
-        public void ReportBySessionTypeMehtodOK()
+        public void ReportBySessionTypeMethodOK()
         {
             clsSessionCollection AllSession = new clsSessionCollection();
             clsSessionCollection FilteredSessions = new clsSessionCollection();
@@ -182,14 +182,14 @@ namespace GymTesting
         {
             clsSessionCollection FilteredSessions = new clsSessionCollection();
             Boolean OK = true;
-            FilteredSessions.ReportBySessionType("xxx xxx");
+            FilteredSessions.ReportBySessionType("HIIT");
             if (FilteredSessions.Count == 2)
             {
-                if( FilteredSessions.SessionList[0].SessionID != 19)
+                if( FilteredSessions.SessionList[0].SessionID != 5)
                 {
                     OK = false;
                 }
-                if (FilteredSessions.SessionList[1].SessionID != 20)
+                if (FilteredSessions.SessionList[1].SessionID != 13)
                 {
                     OK = false;
                 }

@@ -22,4 +22,9 @@ public partial class DeleteSession : System.Web.UI.Page
         SessionBook.Delete();
         Response.Redirect("SessionList.aspx");
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SessionList.aspx");
+    }
 }

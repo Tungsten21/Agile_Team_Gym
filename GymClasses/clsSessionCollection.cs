@@ -9,6 +9,8 @@ namespace GymClasses
 
         List<clsSession> mSessionList = new List<clsSession>();
         clsSession mThisSession = new clsSession();
+
+
         public clsSessionCollection()
         {
             clsDataConnection DB = new clsDataConnection();
@@ -102,7 +104,7 @@ namespace GymClasses
                 ASession.TrainerID = Convert.ToInt32(DB.DataTable.Rows[Index]["TrainerID"]);
                 ASession.BranchID = Convert.ToInt32(DB.DataTable.Rows[Index]["BranchID"]);
                 ASession.SessionType = Convert.ToString(DB.DataTable.Rows[Index]["SessionType"]);
-                ASession.Cost = Convert.ToDouble(DB.DataTable.Rows[Index]["Cost"]);
+                ASession.Cost = Convert.ToDecimal(DB.DataTable.Rows[Index]["Cost"]);
                 ASession.DateTime = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateTime"]);
                 ASession.EquipmentRequired = Convert.ToBoolean(DB.DataTable.Rows[Index]["EquipmentRequired"]);
                 mSessionList.Add(ASession);
