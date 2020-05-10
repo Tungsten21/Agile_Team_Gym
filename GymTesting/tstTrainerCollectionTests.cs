@@ -191,6 +191,8 @@ namespace GymTesting
             //
         }
 
+        //No longer needed report method works
+
         [TestMethod]
         public void ReportByGenderMethodOK()
         {
@@ -202,9 +204,9 @@ namespace GymTesting
             FilteredTrainers.ReportByGender("");
             Assert.AreEqual(AllTrainers.Count, FilteredTrainers.Count);
         }
-       
+
         [TestMethod]
-        public void ReportByPostCodeNoneFound()
+        public void ReportByGenderNoneFound()
         {
             //create an instance of the filtered data
             clsTrainerCollection FilteredTrainers = new clsTrainerCollection();
@@ -216,7 +218,7 @@ namespace GymTesting
         }
 
         [TestMethod]
-        public void ReportByGenderMaleFound()
+        public void ReportByGenderFound()
         {
             //create an instance of the filtered data
             clsTrainerCollection FilteredTrainers = new clsTrainerCollection();
@@ -227,13 +229,13 @@ namespace GymTesting
             //check that the correct number of records are found
             if(FilteredTrainers.Count == 2)
             {
-                //check that the first record ID is 35
-                if(FilteredTrainers.TrainerList[0].TrainerID != 35)
+                //check that the first record ID is 58
+                if(FilteredTrainers.TrainerList[0].TrainerID != 58)
                 {
                     OK = false;
                 }
-                //check that the second record ID is 36
-                if (FilteredTrainers.TrainerList[1].TrainerID != 36)
+                //check that the second record ID is 59
+                if (FilteredTrainers.TrainerList[1].TrainerID != 59)
                 {
                     OK = false;
                 }

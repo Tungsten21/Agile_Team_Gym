@@ -110,6 +110,7 @@ public partial class _Default : System.Web.UI.Page
         clsTrainerCollection Trainers = new clsTrainerCollection();
         Trainers.ReportByGender("");
         //clear any existing filter to tidy up the interface
+        lstTrainerList.DataSource = Trainers.TrainerList;
         txtFilter.Text = "";
         lstTrainerList.DataValueField = "TrainerID";
         //set the name of the field to display
