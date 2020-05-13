@@ -42,7 +42,7 @@ namespace GymTesting
         public void SessionIDPropertyOK()
         {
             clsSession ASession = new clsSession();
-            int TestData = 1;
+            int TestData = 4;
             ASession.SessionID = TestData;
             Assert.AreEqual(ASession.SessionID, TestData);
         }
@@ -270,21 +270,21 @@ namespace GymTesting
         public void TrainerIDMaxPlusOne()
         {
             clsSession ASession = new clsSession();
-            String Error = " ";
-            string trainerID = "aaaaaa";
+            String Error = "";
+            string trainerID = "aaaaaaa";
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
-            Assert.AreNotEqual(Error, " ");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
         public void TrainerIDExtremeMax()
         {
             clsSession ASession = new clsSession();
-            String Error = " ";
+            String Error = "";
             String TrainerID = "";
-            TrainerID = TrainerID.PadRight(500, 'a') + " ";
+            trainerID = TrainerID.PadRight(10, 'a') + "";
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
-           Assert.AreNotEqual(Error, " ");
+           Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -350,21 +350,21 @@ namespace GymTesting
         public void BranchIDMaxPlusOne()
         {
             clsSession ASession = new clsSession();
-            String Error = " ";
-            string branchID = "aaaaaa";
+            String Error = "";
+            string branchID = "aaaaaaa";
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
-            Assert.AreNotEqual(Error, " ");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
         public void BranchIDExtremeMax()
         {
             clsSession ASession = new clsSession();
-            String Error = " ";
+            String Error = "";
             String BranchID = "";
-            BranchID = BranchID.PadRight(500, 'a') + " ";
+            branchID = BranchID.PadRight(50, 'a') + "";
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
-            Assert.AreNotEqual(Error, " ");
+            Assert.AreNotEqual(Error, "");
         }
 
        [TestMethod]
@@ -403,19 +403,20 @@ namespace GymTesting
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
             Assert.AreEqual(Error, "");
         }
-       
-       [TestMethod]
-       public void DateTimeExtremeMax()
-       {
-           clsSession ASession = new clsSession();
-           String Error = " ";
-           DateTime TestDate;
-           TestDate = DateTime.Now.Date;
-           TestDate = TestDate.AddYears(100);
-           string dateTime = TestDate.ToString();
-           Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
-           Assert.AreNotEqual(Error, " ");
-        }
+        // the date for a session has to be in the future.
+
+        //       [TestMethod]
+        //       public void DateTimeExtremeMax()
+        //       {
+        //           clsSession ASession = new clsSession();
+        //           String Error = "";
+        //           DateTime TestDate;
+        //           TestDate = DateTime.Now.Date;
+        //           TestDate = TestDate.AddYears(100);
+        //           string dateTime = TestDate.ToString();
+        //           Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+        //           Assert.AreNotEqual(Error, "");
+        //       }
 
         [TestMethod]
         public void DateTimeInvalidData()
@@ -498,6 +499,96 @@ namespace GymTesting
             Type = Type.PadRight(25, 'a');
             Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
             Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void SessionTypeExtremeMax()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            String Type = "";
+            sessionType = Type.PadRight(500, 'a') + "";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostMinLessOne()
+        {
+            clsSession ASession = new clsSession();
+            string Error = "";
+            string cost = "";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CostMin()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "a";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostMinPlusOne()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "aa";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostMaxLessOne()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "aaaaa";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void CostMax()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "aaaaaa";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostMid()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "aaa";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostMaxPlusOne()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            string cost = "aaaaaaa";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CostExtremeMax()
+        {
+            clsSession ASession = new clsSession();
+            String Error = "";
+            String Cost = "";
+            cost = Cost.PadRight(10, 'a') + "";
+            Error = ASession.Valid(trainerID, branchID, sessionType, dateTime, cost);
+            Assert.AreNotEqual(Error, "");
         }
 
 

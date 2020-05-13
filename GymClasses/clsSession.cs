@@ -146,6 +146,11 @@ namespace GymTesting
                 {
                     Error = Error + "The date cannot be in the past : ";
                 }
+// the date for a session has to be in the future.
+//               if (DateTemp > DateTime.Now.Date)
+//                {
+//                    Error = Error + "The date cannot be in the future : ";
+//                }
             }
 
             catch
@@ -159,6 +164,14 @@ namespace GymTesting
             if (type.Length > 50)
             {
                 Error = Error + "The Type must be less than 50 characters : ";
+            }
+            if (cost.Length == 0)
+            {
+                Error = Error + "The cost can not be blank : ";
+            }
+            if (cost.Length > 6)
+            {
+                Error = Error + "The cost must be less than 6 characters : ";
             }
 
             return Error;
