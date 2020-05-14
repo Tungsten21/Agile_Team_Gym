@@ -10,7 +10,7 @@ namespace GymTesting
         string trainerID = "3";
         string branchID = "2";
         string sessionType = "Swimming";
-        string cost = "5";
+        string cost = "10";
         string dateTime = DateTime.Now.Date.ToString();
 
 
@@ -159,7 +159,7 @@ namespace GymTesting
             Boolean OK = true;
             Int32 SessionID = 4;
             Found = ASession.Find(SessionID);
-            if (ASession.Cost != Convert.ToDecimal(3))
+            if (ASession.Cost != Convert.ToDecimal(10))
             {
                 OK = false;
             }
@@ -174,7 +174,7 @@ namespace GymTesting
             Boolean OK = true;
             Int32 SessionID = 4;
             Found = ASession.Find(SessionID);
-           if (ASession.DateTime != Convert.ToDateTime("03/05/2020 00:00:00"))
+           if (ASession.DateTime != Convert.ToDateTime("03/06/2020 00:00:00"))
             {
                 OK = false;
             }
