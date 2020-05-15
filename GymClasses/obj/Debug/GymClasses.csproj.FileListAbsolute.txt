@@ -57,3 +57,9 @@ C:\Users\Anood\Desktop\agile05042020\GymClasses\obj\Debug\GymClasses.csprojAssem
 C:\Users\Anood\Desktop\agile05042020\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
 C:\Users\Anood\Desktop\agile05042020\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\Anood\Desktop\agile05042020\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\sofya\OneDrive\Documents\University\agile\GymClasses\obj\Debug\GymClasses.pdb

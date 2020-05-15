@@ -48,3 +48,12 @@ C:\Users\rosso\Desktop\rossGitt\GymBackOffice\obj\Debug\GymBackOffice.Properties
 C:\Users\rosso\Desktop\rossGitt\GymBackOffice\obj\Debug\GymBackOffice.csproj.GenerateResource.cache
 C:\Users\rosso\Desktop\rossGitt\GymBackOffice\obj\Debug\GymBackOffice.exe
 C:\Users\rosso\Desktop\rossGitt\GymBackOffice\obj\Debug\GymBackOffice.pdb
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\bin\Debug\GymBackOffice.exe.config
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\bin\Debug\GymBackOffice.exe
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\bin\Debug\GymBackOffice.pdb
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.csprojAssemblyReference.cache
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.Properties.Resources.resources
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.csproj.GenerateResource.cache
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.csproj.CoreCompileInputs.cache
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.exe
+C:\Users\sofya\OneDrive\Documents\University\agile\GymBackOffice\obj\Debug\GymBackOffice.pdb
