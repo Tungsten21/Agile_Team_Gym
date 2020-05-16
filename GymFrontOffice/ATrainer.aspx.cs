@@ -141,4 +141,9 @@ public partial class ATrainer : System.Web.UI.Page
         txtDateOfBirth.Text = Trainers.ThisTrainer.DateOfBirth.ToString();
         chkRetrained.Checked = Trainers.ThisTrainer.Retrained;
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("DefaultTrainer.aspx");
+    }
 }

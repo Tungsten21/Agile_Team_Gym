@@ -35,7 +35,7 @@
             <br />
             <asp:Button ID="btnView" runat="server" OnClick="btnView_Click" Text="OK" Width="103px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="103px" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="103px" OnClick="btnCancel_Click" />
             <br />
             <asp:Label ID="lblError" runat="server" BackColor="#CC0000" BorderColor="Black" BorderStyle="Solid" BorderWidth="3px" Text="No errors!"></asp:Label>
         </div>
