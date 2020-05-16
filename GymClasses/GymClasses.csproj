@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classMember.cs" />
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsMember.cs" />
+    <Compile Include="clsMemberCollection.cs" />
     <Compile Include="clsSession.cs" />
     <Compile Include="clsSessionCollection.cs" />
     <Compile Include="clsTrainer.cs" />

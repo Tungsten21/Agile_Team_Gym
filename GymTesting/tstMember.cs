@@ -7,6 +7,13 @@ namespace GymTesting
     [TestClass]
     public class tstMember
     {
+
+            string FullName = "Sofyan Koultouma";
+            string Address = "1 Leicester road";
+            string DOB = DateTime.Now.Date.AddYears(-28).ToString();
+            string PhoneNumber = "07856681287";
+        
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -15,107 +22,84 @@ namespace GymTesting
             //test to see that it exists
             Assert.IsNotNull(AMember);
         }
+
         [TestMethod]
-        public void ActivePropertyOK()
-        {
-            //Create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //Create some test data to assign to the property 
-            Boolean TestData = true;
-            //assign the data to the property 
-            AMember.Active = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AMember.Active, TestData);
-        }
-        [TestMethod]
-        public void DateaddedPropertyOK()
+        public void MemberIDPropertyOK()
         {
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
-            //create some test data to assign to the property 
+            //create some test data to assign to the property
+            int TestData = 3;
+            //assign the data to the property
+            AMember.MemberID = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AMember.MemberID, TestData);
+        }
+
+        [TestMethod]
+        public void FullNamePropertyOK()
+        {
+            //create instance of the class we want to create
+            clsMember AMember = new clsMember();
+            //create some test data to assign to the property
+            string TestData = "Sofyan Koultouma";
+            //asign the data to the property
+            AMember.FullName = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AMember.FullName, TestData);
+        }
+        [TestMethod]
+        public void AddressPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsMember AMember = new clsMember();
+            //create some test data to assign to the property
+            String TestData = "1 Leicester road";
+            //assign the data to the property
+            AMember.Address = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AMember.Address, TestData);
+        }
+
+        [TestMethod]
+        public void DOBPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsMember AMember = new clsMember();
+            //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
-            AMember.DateAdded = TestData;
+            AMember.DOB = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AMember.DateAdded, TestData);
-        }
-        [TestMethod]
-        public void AddressNoPropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //create some test data to assign to the property
-            Int32 TestData = 1;
-            //assign the data to the property
-            AMember.AddressNo = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AMember.AddressNo, TestData);
+            Assert.AreEqual(AMember.DOB, TestData);
         }
 
         [TestMethod]
-        public void CountyNoPropertyOK()
+        public void PhoneNumberPropertyOK()
         {
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
             //create some test data to assign to the property
-            Int32 TestData = 1;
+            string TestData = "07856681287";
             //assign the data to the property
-            AMember.CountyNo = TestData;
+            AMember.PhoneNumber = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AMember.CountyNo, TestData);
+            Assert.AreEqual(AMember.PhoneNumber, TestData);
         }
 
         [TestMethod]
-        public void HouseNoPropertyOK()
+        public void MedicalConditionsPropertyOK()
         {
-            //create an instance of the class we want to create
+            //create an instance of the class we weant to create
             clsMember AMember = new clsMember();
-            //create some test data to assign to the property
-            string TestData = "21b";
+            //create the test data to the property
+            Boolean TestData = true;
             //assign the data to the property
-            AMember.HouseNo = TestData;
+            AMember.MedicalConditions = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AMember.HouseNo, TestData);
+            Assert.AreEqual(AMember.MedicalConditions, TestData);
         }
 
-        [TestMethod]
-        public void PostCodePropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //create some test data to assign to the property
-            string TestData = "LE1 4AB";
-            //assign the data to the property
-            AMember.PostCode = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AMember.PostCode, TestData);
-        }
-
-        [TestMethod]
-        public void StreetPropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //create some test data to assign to the property
-            string TestData = "Some Street";
-            //assign the data to the property
-            AMember.Street = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AMember.Street, TestData);
-        }
-
-        [TestMethod]
-        public void TownPropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //create some test data to assign to the property
-            string TestData = "Leicester";
-            //assign the data to the property
-            AMember.Town = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AMember.Town, TestData);
-        }
         [TestMethod]
         public void FindMethodOK()
         {
@@ -124,40 +108,13 @@ namespace GymTesting
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 AddressNo = 1;
+            Int32 TestData = 1;
             //invoke the method
-            Found = AMember.Find(AddressNo);
-            //test to see that the result is correct
-            Assert.IsTrue(Found);
-        }
-        [TestMethod]
-        public void TestAddressNoFound()
-        {
-            //Create an instance of the class we want to create
-            clsMember AMember = new clsMember();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK (Assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 AddressNo = 21;
-            //invoke the method
-            Found = AMember.Find(AddressNo);
-            //Check the address no 
-            if (AMember.AddressNo != 21)
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Found = AMember.Find(TestData);
         }
 
-
-        //!!!!!!!!!!!!!
-
-       
         [TestMethod]
-        public void TestStreetFound()
+        public void TestMemberIDFound()
         {
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
@@ -166,11 +123,11 @@ namespace GymTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AddressNo = 21;
+            Int32 TestData = 3;
             //invoke the method
-            Found = AMember.Find(AddressNo);
-            //check the property
-            if (AMember.Street != "Test Street")
+            Found = AMember.Find(TestData);
+            //check the Member ID
+            if (AMember.MemberID != 3)
             {
                 OK = false;
             }
@@ -179,20 +136,84 @@ namespace GymTesting
         }
 
         [TestMethod]
-        public void TestTownFound()
+        public void TestFullNameFound()
+        {
+            clsMember AMember = new clsMember();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestData = 3;
+            Found = AMember.Find(TestData);
+            if (AMember.FullName != "Wayne Rooney")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            clsMember AMember = new clsMember();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestData = 3;
+            Found = AMember.Find(TestData);
+            if (AMember.Address != "55 South Leicester Road")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestDOBFound()
         {
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
             //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
+            //boolean variable to record if data is OK, assuming it is
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AddressNo = 21;
+            Int32 TestData = 2;
             //invoke the method
-            Found = AMember.Find(AddressNo);
+            Found = AMember.Find(TestData);
             //check the property
-            if (AMember.Town != "Test Town")
+            if (AMember.DOB != Convert.ToDateTime("1998/07/08"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPhoneNumberFound()
+        {
+            clsMember AMember = new clsMember();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TestData = 3;
+            Found = AMember.Find(TestData);
+            if (AMember.PhoneNumber != "07586978425")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestMedicalConditionsFound()
+        {
+            //create an instance of the class we want to create
+            clsMember AMember = new clsMember();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK, assuming it is
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TestData = 2;
+            //invoke the method
+            Found = AMember.Find(TestData);
+            //check the property
+            if (AMember.MedicalConditions != true)
             {
                 OK = false;
             }
@@ -201,92 +222,452 @@ namespace GymTesting
         }
 
         [TestMethod]
-        public void TestPostCodeFound()
+        public void ValidMethodOK()
         {
-            //create an instance of the class we want to create
             clsMember AMember = new clsMember();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 AddressNo = 21;
-            //invoke the method
-            Found = AMember.Find(AddressNo);
-            //check the property
-            if (AMember.PostCode != "XXX XXX")
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
+            string Error = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void TestCountyNoFound()
+        public void FullNameExtremeMin()
         {
-            //create an instance of the class we want to create
             clsMember AMember = new clsMember();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 AddressNo = 21;
-            //invoke the method
-            Found = AMember.Find(AddressNo);
-            //check the property
-            if (AMember.CountyNo != 1)
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
+            String Error = "";
+            String FullName = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+
         }
 
         [TestMethod]
-        public void TestDateAddedFound()
+        public void FullNameMinMinusOne()
         {
-            //create an instance of the class we want to create
             clsMember AMember = new clsMember();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 AddressNo = 21;
-            //invoke the method
-            Found = AMember.Find(AddressNo);
-            //check the property
-            if (AMember.DateAdded != Convert.ToDateTime("16/09/2015"))
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
+            String Error = "";
+            String FullName = "A";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void TestActiveFound()
+        public void FullNameMinBoundary()
         {
-            //create an instance of the class we want to create
             clsMember AMember = new clsMember();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 AddressNo = 21;
-            //invoke the method
-            Found = AMember.Find(AddressNo);
-            //check the property
-            if (AMember.Active != true)
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
+            String Error = "";
+            String FullName = "A A";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameMinPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AA A";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameMaxMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+    
+        [TestMethod]
+        public void FullNameMaxBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameMaxPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameMid()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AAAAAAAAAA AAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNamExtremeMax()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "";
+            FullName = FullName.PadRight(100, 'A') + "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameContainsSpace()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FullNameNotBlank()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String FullName = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBExtremeMin()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-100).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMinMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-65).AddDays(-1).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMinBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-65).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMinPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-65).AddDays(-1).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMaxMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-18).AddDays(-1).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMaxBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-18).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMaxPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-18).AddDays(-1).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBMid()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(-28).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBExtremeMax()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DOB = TestDate.AddYears(100).ToString();
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBInvalidData()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            String DOB = "this is not a date!";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DOBNotBlank()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string DOB = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressExtremeMin()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "road";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMinMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "A A AA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMinBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "A A AAA ";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMinPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AA A AAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMaxMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMaxBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMaxPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressMid()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressExtremeMax()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressNotBlank()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string Address = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberExtremeMin()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMinMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMinBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMinPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMaxMinusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMaxBoundary()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMaxPlusOne()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMid()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberExtremeMax()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "AAAAAAAAAAAAAAAA";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberNotBlank()
+        {
+            clsMember AMember = new clsMember();
+            String Error = "";
+            string PhoneNumber = "";
+            Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
+            Assert.AreNotEqual(Error, "");
         }
     }
-
 }

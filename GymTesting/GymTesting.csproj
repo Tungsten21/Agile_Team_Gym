@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstMember.cs" />
+    <Compile Include="tstMemberCollection.cs" />
     <Compile Include="tstSession.cs" />
     <Compile Include="tstSessionCollection.cs" />
     <Compile Include="tstTrainerCollectionTests.cs" />
