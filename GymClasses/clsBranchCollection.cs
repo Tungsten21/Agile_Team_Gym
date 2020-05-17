@@ -129,7 +129,7 @@ namespace GymClasses
                 ABranch.GymAddress = Convert.ToString(DB.DataTable.Rows[Index]["GymAddress"]);
                 ABranch.DateOpened = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOpened"]);
                 ABranch.SessionCount = Convert.ToInt32(DB.DataTable.Rows[Index]["SessionCount"]);
-                ABranch.Ammenties = Convert.ToBoolean(DB.DataTable.Rows[Index]["Ammenties"]);
+                ABranch.Ammenities = Convert.ToBoolean(DB.DataTable.Rows[Index]["Ammenties"]);
 
                 mBranchList.Add(ABranch);
                 

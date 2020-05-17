@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="tstBranchCollection.cs" />
+    <Compile Include="tstBranch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstMember.cs" />
     <Compile Include="tstMemberCollection.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="tstSessionCollection.cs" />
     <Compile Include="tstTrainerCollectionTests.cs" />
     <Compile Include="tstTrainerTests.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
