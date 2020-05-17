@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GymClasses",
+    "\\GymFrontOffice",
+    "\\GymTesting"
   ],
+  "SelectedNode": "\\GymFrontOffice\\MemberList.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

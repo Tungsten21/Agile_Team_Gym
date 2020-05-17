@@ -68,3 +68,9 @@ C:\Users\rosso\Desktop\rossGit2\GymClasses\bin\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\aosma\source\repos\Tungsten21\Agile_Team_Gym\GymClasses\obj\Debug\GymClasses.pdb
