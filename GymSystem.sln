@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBackOffice", "GymBackOffice\GymBackOffice.csproj", "{93EDF606-E238-490E-B27C-EB78CC86B6DF}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GymFrontOffice", "GymFrontOffice\", "{0854E064-C0F8-4325-902D-158023AC3020}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{c9783756-8457-49e4-aba4-9b67ade13be7}|GymClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50536"
 		Debug.AspNetCompiler.PhysicalPath = "GymFrontOffice\"

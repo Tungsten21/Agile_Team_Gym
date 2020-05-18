@@ -68,3 +68,8 @@ C:\Users\rosso\Desktop\rossGit2\GymClasses\bin\Debug\GymClasses.pdb
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.csprojAssemblyReference.cache
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.dll
 C:\Users\rosso\Desktop\rossGit2\GymClasses\obj\Debug\GymClasses.pdb
+C:\Users\sofya\OneDrive\Documents\University\Finallyy\GymClasses\bin\Debug\GymClasses.dll
+C:\Users\sofya\OneDrive\Documents\University\Finallyy\GymClasses\bin\Debug\GymClasses.pdb
+C:\Users\sofya\OneDrive\Documents\University\Finallyy\GymClasses\obj\Debug\GymClasses.csproj.CoreCompileInputs.cache
+C:\Users\sofya\OneDrive\Documents\University\Finallyy\GymClasses\obj\Debug\GymClasses.dll
+C:\Users\sofya\OneDrive\Documents\University\Finallyy\GymClasses\obj\Debug\GymClasses.pdb
