@@ -8,11 +8,11 @@ namespace GymTesting
     public class tstMember
     {
 
-            string FullName = "Sofyan Koultouma";
-            string Address = "1 Leicester road";
-            string DOB = DateTime.Now.Date.AddYears(-28).ToString();
-            string PhoneNumber = "07856681287";
-        
+        string FullName = "Sofyan Koultouma";
+        string Address = "1 Leicester road";
+        string DOB = DateTime.Now.Date.AddYears(-28).ToString();
+        string PhoneNumber = "07856681287";
+
 
         [TestMethod]
         public void InstanceOK()
@@ -29,7 +29,7 @@ namespace GymTesting
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
             //create some test data to assign to the property
-            int TestData = 3;
+            int TestData = 11;
             //assign the data to the property
             AMember.MemberID = TestData;
             //test to see that the two values are the same
@@ -108,9 +108,10 @@ namespace GymTesting
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 TestData = 1;
+            Int32 TestData = 7;
             //invoke the method
             Found = AMember.Find(TestData);
+            Assert.IsTrue(Found);
         }
 
         [TestMethod]
@@ -119,15 +120,15 @@ namespace GymTesting
             //create an instance of the class we want to create
             clsMember AMember = new clsMember();
             //boolean variable to store the result of the search
-            Boolean Found = false;
+            Boolean Found = true;
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestData = 3;
+            Int32 TestData = 11;
             //invoke the method
             Found = AMember.Find(TestData);
             //check the Member ID
-            if (AMember.MemberID != 3)
+            if (AMember.MemberID != 11)
             {
                 OK = false;
             }
@@ -141,9 +142,9 @@ namespace GymTesting
             clsMember AMember = new clsMember();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 TestData = 3;
+            Int32 TestData = 10;
             Found = AMember.Find(TestData);
-            if (AMember.FullName != "Wayne Rooney")
+            if (AMember.FullName != "James Bond")
             {
                 OK = false;
             }
@@ -156,9 +157,9 @@ namespace GymTesting
             clsMember AMember = new clsMember();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 TestData = 3;
+            Int32 TestData = 11;
             Found = AMember.Find(TestData);
-            if (AMember.Address != "55 South Leicester Road")
+            if (AMember.Address != "1 Leicester Road")
             {
                 OK = false;
             }
@@ -174,11 +175,11 @@ namespace GymTesting
             //boolean variable to record if data is OK, assuming it is
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestData = 2;
+            Int32 TestData = 10;
             //invoke the method
             Found = AMember.Find(TestData);
             //check the property
-            if (AMember.DOB != Convert.ToDateTime("1998/07/08"))
+            if (AMember.DOB != Convert.ToDateTime("01-12-1954"))
             {
                 OK = false;
             }
@@ -191,9 +192,9 @@ namespace GymTesting
             clsMember AMember = new clsMember();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 TestData = 3;
+            Int32 TestData = 11;
             Found = AMember.Find(TestData);
-            if (AMember.PhoneNumber != "07586978425")
+            if (AMember.PhoneNumber != "07856681247")
             {
                 OK = false;
             }
@@ -209,9 +210,9 @@ namespace GymTesting
             //boolean variable to record if data is OK, assuming it is
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TestData = 2;
+            Int32 MemberID = 11;
             //invoke the method
-            Found = AMember.Find(TestData);
+            Found = AMember.Find(MemberID);
             //check the property
             if (AMember.MedicalConditions != true)
             {
@@ -276,19 +277,19 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
-    
+
         [TestMethod]
         public void FullNameMaxBoundary()
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA";
+            String FullName = "AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -375,7 +376,7 @@ namespace GymTesting
             TestDate = DateTime.Now.Date;
             string DOB = TestDate.AddYears(-65).ToString();
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -385,7 +386,7 @@ namespace GymTesting
             String Error = "";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
-            string DOB = TestDate.AddYears(-65).AddDays(-1).ToString();
+            string DOB = TestDate.AddYears(-65).AddDays(1).ToString();
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
@@ -421,7 +422,7 @@ namespace GymTesting
             String Error = "";
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
-            string DOB = TestDate.AddYears(-18).AddDays(-1).ToString();
+            string DOB = TestDate.AddYears(-18).AddDays(1).ToString();
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreNotEqual(Error, "");
         }
@@ -495,7 +496,7 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string Address = "A A AAA ";
+            string Address = "AAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
@@ -505,7 +506,7 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string Address = "AA A AAA";
+            string Address = "AAAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
@@ -525,9 +526,10 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string Address = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            string Address = "";
+            Address = Address.PadRight(50, 'a');
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -595,7 +597,7 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string PhoneNumber = "AAAAAAAAAAA";
+            string PhoneNumber = "AAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
@@ -605,7 +607,7 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string PhoneNumber = "AAAAAAAAAAAA";
+            string PhoneNumber = "AAAAAAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
@@ -645,7 +647,7 @@ namespace GymTesting
         {
             clsMember AMember = new clsMember();
             String Error = "";
-            string PhoneNumber = "AAAAAA";
+            string PhoneNumber = "AAAAAAA";
             Error = AMember.Valid(FullName, Address, DOB, PhoneNumber);
             Assert.AreEqual(Error, "");
         }
